@@ -14,6 +14,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.wecasino.proto.recorder.*;
+import com.wecasino.proto.games.*;
+
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner  {
 
@@ -44,11 +47,64 @@ public class DemoApplication implements CommandLineRunner  {
 
 	public void listen(Message msg) {
 
-		if (msg.getMessageProperties().getType().equals(in))
+		String msgType = msg.getMessageProperties().getType();
 
-		System.out.println("Message read from myQueue : " + msg);
+		if (msgType.equals(GameNotifyType.NOTIFY_GAME_PROVIDE_STATE_CHANGE.name())) {
+			//processGameProvide
+		} else if (msgType.equals(GameNotifyType.NOTIFY_GAME_DEALER_LOGIN.name())) {
+
+		} else if (msgType.equals(GameNotifyType.NOTIFY_GAME_DEALER_LOGOUT.name())) {
+
+		} else if (msgType.equals(GameNotifyType.NOTIFY_GAME_CHANGING_SHOE.name())) {
+
+		} else if (msgType.equals(GameNotifyType.NOTIFY_SHIFT_START.name())) {
+			processShift(msg.getBody(), GameNotifyType.NOTIFY_SHOE_START);
+		} else if (msgType.equals(GameNotifyType.NOTIFY_SHIFT_END.name())) {
+			processShift(msg.getBody(), GameNotifyType.NOTIFY_SHOE_START);
+		} else if  (msgType.equals(GameNotifyType.NOTIFY_SHOE_START.name())) {
+			processShoe(msg.getBody(), GameNotifyType.NOTIFY_SHOE_START);
+		} else if  (msgType.equals(GameNotifyType.NOTIFY_SHOE_END.name())) {
+			processShoe(msg.getBody(), GameNotifyType.NOTIFY_SHOE_END);
+		} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_START.name())) {
+			processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_START);
+		} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_BET.name())) {
+			processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_BET);
+		} else if  (msgType.equals(GameNotifyType.ROUND_NO_MORE_BET.name())) {
+			processRound(msg.getBody(), GameNotifyType.ROUND_NO_MORE_BET);
+		} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_STEP.name())) {
+			processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_STEP);
+		} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_FINISH.name())) {
+			processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_FINISH);
+		} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_CANCEL.name())) {
+			processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_CANCEL);
+		} else {
+			logger.error("Unknown message type: " + msgType);
+		}
 	}
 
+	protected void processShift(byte[] data, GameNotifyType notifyType) {
 
+	}
+
+	protected void processShoe(byte[] data, GameNotifyType notifyType) {
+
+	}
+
+	protected void processRound(byte[] data, GameNotifyType notifyType) {
+		try{
+			RoundRecord round = RoundRecord.newBuilder().mergeFrom(data).build();
+
+			String gameType = round.getGameType();
+
+			if (gameType.equals(GameType.BACCARAT.name())) {
+
+			} else if (gameType.equals(GameType.LUCKYWHEEL.name())) {
+				//handle LUCKYWHEEL
+			}
+
+		} catch (Exception e) {
+			logger.error("Failed to parse round record", e);
+		}
+	}
 
 }
