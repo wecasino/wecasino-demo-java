@@ -43,7 +43,11 @@ public class DemoApplication  {
 			}),
 		ackMode = "MANUAL"	
 	)
-
+	// 所有遊戲通知都會透過這個方法進行處理
+	// 每一個通知處理完後，需要透過 channel.basicAck() 來確認處理完畢
+	// 如果處理失敗，則透過 channel.basicNack() 來重新處理
+	// 這個方法裡不能有long running task，否則會導致rabbitmq channel被佔用，無法接收新的訊息, 進而導致遊戲端延遲
+	// 可以透過添加channel pool size或跑多個instance(docker, k8s)來解決性能問題
 	public void listen(Message msg, Channel channel) {
 		try {
 
