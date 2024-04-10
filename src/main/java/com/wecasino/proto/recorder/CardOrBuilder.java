@@ -73,7 +73,7 @@ public interface CardOrBuilder extends
    * 橫放、直放...
    * </pre>
    *
-   * <code>optional int64 status = 5 [json_name = "status"];</code>
+   * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
@@ -82,7 +82,7 @@ public interface CardOrBuilder extends
    * 橫放、直放...
    * </pre>
    *
-   * <code>optional int64 status = 5 [json_name = "status"];</code>
+   * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
    * @return The status.
    */
   long getStatus();
@@ -92,7 +92,7 @@ public interface CardOrBuilder extends
    * 明文
    * </pre>
    *
-   * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+   * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
    * @return Whether the plainText field is set.
    */
   boolean hasPlainText();
@@ -101,7 +101,7 @@ public interface CardOrBuilder extends
    * 明文
    * </pre>
    *
-   * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+   * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
    * @return The plainText.
    */
   java.lang.String getPlainText();
@@ -110,7 +110,7 @@ public interface CardOrBuilder extends
    * 明文
    * </pre>
    *
-   * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+   * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
    * @return The bytes for plainText.
    */
   com.google.protobuf.ByteString
@@ -121,7 +121,7 @@ public interface CardOrBuilder extends
    * 簽章
    * </pre>
    *
-   * <code>optional string signature = 9 [json_name = "signature"];</code>
+   * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
    * @return Whether the signature field is set.
    */
   boolean hasSignature();
@@ -130,7 +130,7 @@ public interface CardOrBuilder extends
    * 簽章
    * </pre>
    *
-   * <code>optional string signature = 9 [json_name = "signature"];</code>
+   * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
    * @return The signature.
    */
   java.lang.String getSignature();
@@ -139,7 +139,7 @@ public interface CardOrBuilder extends
    * 簽章
    * </pre>
    *
-   * <code>optional string signature = 9 [json_name = "signature"];</code>
+   * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
    * @return The bytes for signature.
    */
   com.google.protobuf.ByteString
@@ -150,7 +150,7 @@ public interface CardOrBuilder extends
    * 簽章方法
    * </pre>
    *
-   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
    * @return Whether the signAlgorithm field is set.
    */
   boolean hasSignAlgorithm();
@@ -159,7 +159,7 @@ public interface CardOrBuilder extends
    * 簽章方法
    * </pre>
    *
-   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
    * @return The signAlgorithm.
    */
   java.lang.String getSignAlgorithm();
@@ -168,7 +168,7 @@ public interface CardOrBuilder extends
    * 簽章方法
    * </pre>
    *
-   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
    * @return The bytes for signAlgorithm.
    */
   com.google.protobuf.ByteString

@@ -182,7 +182,7 @@ private static final long serialVersionUID = 0L;
    * 橫放、直放...
    * </pre>
    *
-   * <code>optional int64 status = 5 [json_name = "status"];</code>
+   * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
    * @return Whether the status field is set.
    */
   @java.lang.Override
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
    * 橫放、直放...
    * </pre>
    *
-   * <code>optional int64 status = 5 [json_name = "status"];</code>
+   * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
    * @return The status.
    */
   @java.lang.Override
@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
    * 明文
    * </pre>
    *
-   * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+   * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
    * @return Whether the plainText field is set.
    */
   @java.lang.Override
@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
    * 明文
    * </pre>
    *
-   * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+   * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
    * @return The plainText.
    */
   @java.lang.Override
@@ -243,7 +243,7 @@ private static final long serialVersionUID = 0L;
    * 明文
    * </pre>
    *
-   * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+   * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
    * @return The bytes for plainText.
    */
   @java.lang.Override
@@ -269,7 +269,7 @@ private static final long serialVersionUID = 0L;
    * 簽章
    * </pre>
    *
-   * <code>optional string signature = 9 [json_name = "signature"];</code>
+   * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
    * @return Whether the signature field is set.
    */
   @java.lang.Override
@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
    * 簽章
    * </pre>
    *
-   * <code>optional string signature = 9 [json_name = "signature"];</code>
+   * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
    * @return The signature.
    */
   @java.lang.Override
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
    * 簽章
    * </pre>
    *
-   * <code>optional string signature = 9 [json_name = "signature"];</code>
+   * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
    * @return The bytes for signature.
    */
   @java.lang.Override
@@ -328,7 +328,7 @@ private static final long serialVersionUID = 0L;
    * 簽章方法
    * </pre>
    *
-   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
    * @return Whether the signAlgorithm field is set.
    */
   @java.lang.Override
@@ -340,7 +340,7 @@ private static final long serialVersionUID = 0L;
    * 簽章方法
    * </pre>
    *
-   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
    * @return The signAlgorithm.
    */
   @java.lang.Override
@@ -361,7 +361,7 @@ private static final long serialVersionUID = 0L;
    * 簽章方法
    * </pre>
    *
-   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+   * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
    * @return The bytes for signAlgorithm.
    */
   @java.lang.Override
@@ -1149,7 +1149,7 @@ private static final long serialVersionUID = 0L;
      * 橫放、直放...
      * </pre>
      *
-     * <code>optional int64 status = 5 [json_name = "status"];</code>
+     * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
      * @return Whether the status field is set.
      */
     @java.lang.Override
@@ -1161,7 +1161,7 @@ private static final long serialVersionUID = 0L;
      * 橫放、直放...
      * </pre>
      *
-     * <code>optional int64 status = 5 [json_name = "status"];</code>
+     * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
      * @return The status.
      */
     @java.lang.Override
@@ -1173,7 +1173,7 @@ private static final long serialVersionUID = 0L;
      * 橫放、直放...
      * </pre>
      *
-     * <code>optional int64 status = 5 [json_name = "status"];</code>
+     * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -1189,7 +1189,7 @@ private static final long serialVersionUID = 0L;
      * 橫放、直放...
      * </pre>
      *
-     * <code>optional int64 status = 5 [json_name = "status"];</code>
+     * <code>optional int64 status = 5 [json_name = "status", (.tagger.tags) = "bson:&#92;"status,omitempty&#92;""];</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -1205,7 +1205,7 @@ private static final long serialVersionUID = 0L;
      * 明文
      * </pre>
      *
-     * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+     * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
      * @return Whether the plainText field is set.
      */
     public boolean hasPlainText() {
@@ -1216,7 +1216,7 @@ private static final long serialVersionUID = 0L;
      * 明文
      * </pre>
      *
-     * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+     * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
      * @return The plainText.
      */
     public java.lang.String getPlainText() {
@@ -1236,7 +1236,7 @@ private static final long serialVersionUID = 0L;
      * 明文
      * </pre>
      *
-     * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+     * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
      * @return The bytes for plainText.
      */
     public com.google.protobuf.ByteString
@@ -1257,7 +1257,7 @@ private static final long serialVersionUID = 0L;
      * 明文
      * </pre>
      *
-     * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+     * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
      * @param value The plainText to set.
      * @return This builder for chaining.
      */
@@ -1274,7 +1274,7 @@ private static final long serialVersionUID = 0L;
      * 明文
      * </pre>
      *
-     * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+     * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
      * @return This builder for chaining.
      */
     public Builder clearPlainText() {
@@ -1288,7 +1288,7 @@ private static final long serialVersionUID = 0L;
      * 明文
      * </pre>
      *
-     * <code>optional string plain_text = 8 [json_name = "plainText"];</code>
+     * <code>optional string plain_text = 8 [json_name = "plainText", (.tagger.tags) = "bson:&#92;"plainText,omitempty&#92;""];</code>
      * @param value The bytes for plainText to set.
      * @return This builder for chaining.
      */
@@ -1308,7 +1308,7 @@ private static final long serialVersionUID = 0L;
      * 簽章
      * </pre>
      *
-     * <code>optional string signature = 9 [json_name = "signature"];</code>
+     * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
      * @return Whether the signature field is set.
      */
     public boolean hasSignature() {
@@ -1319,7 +1319,7 @@ private static final long serialVersionUID = 0L;
      * 簽章
      * </pre>
      *
-     * <code>optional string signature = 9 [json_name = "signature"];</code>
+     * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
      * @return The signature.
      */
     public java.lang.String getSignature() {
@@ -1339,7 +1339,7 @@ private static final long serialVersionUID = 0L;
      * 簽章
      * </pre>
      *
-     * <code>optional string signature = 9 [json_name = "signature"];</code>
+     * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
      * @return The bytes for signature.
      */
     public com.google.protobuf.ByteString
@@ -1360,7 +1360,7 @@ private static final long serialVersionUID = 0L;
      * 簽章
      * </pre>
      *
-     * <code>optional string signature = 9 [json_name = "signature"];</code>
+     * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
      * @param value The signature to set.
      * @return This builder for chaining.
      */
@@ -1377,7 +1377,7 @@ private static final long serialVersionUID = 0L;
      * 簽章
      * </pre>
      *
-     * <code>optional string signature = 9 [json_name = "signature"];</code>
+     * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
      * @return This builder for chaining.
      */
     public Builder clearSignature() {
@@ -1391,7 +1391,7 @@ private static final long serialVersionUID = 0L;
      * 簽章
      * </pre>
      *
-     * <code>optional string signature = 9 [json_name = "signature"];</code>
+     * <code>optional string signature = 9 [json_name = "signature", (.tagger.tags) = "bson:&#92;"signature,omitempty&#92;""];</code>
      * @param value The bytes for signature to set.
      * @return This builder for chaining.
      */
@@ -1411,7 +1411,7 @@ private static final long serialVersionUID = 0L;
      * 簽章方法
      * </pre>
      *
-     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
      * @return Whether the signAlgorithm field is set.
      */
     public boolean hasSignAlgorithm() {
@@ -1422,7 +1422,7 @@ private static final long serialVersionUID = 0L;
      * 簽章方法
      * </pre>
      *
-     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
      * @return The signAlgorithm.
      */
     public java.lang.String getSignAlgorithm() {
@@ -1442,7 +1442,7 @@ private static final long serialVersionUID = 0L;
      * 簽章方法
      * </pre>
      *
-     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
      * @return The bytes for signAlgorithm.
      */
     public com.google.protobuf.ByteString
@@ -1463,7 +1463,7 @@ private static final long serialVersionUID = 0L;
      * 簽章方法
      * </pre>
      *
-     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
      * @param value The signAlgorithm to set.
      * @return This builder for chaining.
      */
@@ -1480,7 +1480,7 @@ private static final long serialVersionUID = 0L;
      * 簽章方法
      * </pre>
      *
-     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
      * @return This builder for chaining.
      */
     public Builder clearSignAlgorithm() {
@@ -1494,7 +1494,7 @@ private static final long serialVersionUID = 0L;
      * 簽章方法
      * </pre>
      *
-     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm"];</code>
+     * <code>optional string sign_algorithm = 10 [json_name = "signAlgorithm", (.tagger.tags) = "bson:&#92;"signAlgorithm,omitempty&#92;""];</code>
      * @param value The bytes for signAlgorithm to set.
      * @return This builder for chaining.
      */

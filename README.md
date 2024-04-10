@@ -4,15 +4,14 @@
 - https://www.rabbitmq.com/tutorials/tutorial-one-spring-amqp
 
 
-### run receiver
+### run demo app
 
 ```sh
 
+# brew install maven
+
 mvn clean package
 
-# consumer
-java -jar target/rabbitmq-tutorials.jar --spring.profiles.active=hello-world,receiver
-
-java -jar target/spring-amqp-0.1.0.jar
+java -jar target/demo-0.0.1.jar
 
 ```
