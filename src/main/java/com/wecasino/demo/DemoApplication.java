@@ -99,7 +99,7 @@ public class DemoApplication  {
 			} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_CANCEL.name())) {
 				processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_CANCEL);
 			} else {
-				logger.error("unhandled message type: " + msgType);
+				logger.warn("unhandled message type: " + msgType);
 			}
 
 			// Acknowledge the message after processing
