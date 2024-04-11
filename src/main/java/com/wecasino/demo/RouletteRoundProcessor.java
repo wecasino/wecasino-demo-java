@@ -8,15 +8,15 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
-public class SicboRoundProcessor implements RoundProcessor {
+public class RouletteRoundProcessor implements RoundProcessor {
 
     private static final Logger logger =
-            LoggerFactory.getLogger(SicboRoundProcessor.class);
+            LoggerFactory.getLogger(RouletteRoundProcessor.class);
 
     RoundParser roundParser = new RoundParser();
 
     public void ProcessRound(RoundRecord round, GameNotifyType notifyType) {
-        logger.info("Sicbo process round: {}  game {} round {}", notifyType, round.getGameCode(), round.getRoundCode());
+        logger.info("Roulette process round: {}  game {} round {}", notifyType, round.getGameCode(), round.getRoundCode());
 
         roundParser.VerifyRound(round);
 
@@ -50,7 +50,7 @@ public class SicboRoundProcessor implements RoundProcessor {
     public void processRoundBet(RoundRecord round) {
         //state: start bet 開始下注
 
-        Step step = roundParser.GetLastStepOfCode(round, com.wecasino.proto.games.sicbo.Step.ROUND_BET.getNumber());
+        Step step = roundParser.GetLastStepOfCode(round, com.wecasino.proto.games.roulette.Step.ROUND_BET.getNumber());
         //倒數秒數 step.getDuration()
         //開始下注時間 step.getTimestamp()
 
@@ -62,7 +62,7 @@ public class SicboRoundProcessor implements RoundProcessor {
     public void processRoundNoMoreBet(RoundRecord round) {
         //state: stop bet 停止下注
 
-        Step step = roundParser.GetLastStepOfCode(round, com.wecasino.proto.games.sicbo.Step.NO_MORE_BET.getNumber());
+        Step step = roundParser.GetLastStepOfCode(round, com.wecasino.proto.games.roulette.Step.NO_MORE_BET.getNumber());
         //停止下注時間 step.getTimestamp()
 
         //更新遊戲局狀態
@@ -71,13 +71,16 @@ public class SicboRoundProcessor implements RoundProcessor {
     public void processRoundStep(RoundRecord round) {
         //state: card 發牌
         Step step = roundParser.GetCurrentStep(round);
-        if (step.getCode() == com.wecasino.proto.games.sicbo.Step.ROUND_START.getNumber()) {
+        if (step.getCode() == com.wecasino.proto.games.roulette.Step.ROUND_START.getNumber()) {
             return;
         }
 
-        String roundCard = parseRoundCards(round);  //遊戲結果, format DICE_1-DICE_2-DICE_3
+        String roundCard = parseRoundCards(round);  //遊戲結果, format ROULETTE_1
         Map<String, Long> fortuneRatesMap = round.getFortuneRatesMap(); //財神倍率
-
+        fortuneRatesMap.forEach((k, v) ->  {
+            //k 號碼 0-36, v 倍率
+        });
+        
         //更新遊戲局狀態, 卡牌資料
 
     }
@@ -87,10 +90,10 @@ public class SicboRoundProcessor implements RoundProcessor {
         Step step = roundParser.GetCurrentStep(round);
         //局結算時間 step.getTimestamp()
 
-        String roundCard = parseRoundCards(round);  //遊戲結果, format DICE_1-DICE_2-DICE_3
+        String roundCard = parseRoundCards(round);  //遊戲結果, format ROULETTE_1
         Map<String, Long> fortuneRatesMap = round.getFortuneRatesMap(); //財神倍率
         fortuneRatesMap.forEach((k, v) ->  {
-            //k 3骰總和 3-18, v 倍率
+            //k 號碼 0-36, v 倍率
         });
 
         //更新遊戲局狀態, 卡牌資料
@@ -114,7 +117,7 @@ public class SicboRoundProcessor implements RoundProcessor {
 
     }
 
-    //result format: DICE_1-DICE_2-DICE_3
+    //result format: ROULETTE_1 (ROULETTE_0 - ROULETTE_36)
     String parseRoundCards(RoundRecord round) {
         Map<Integer, Seat> seats = round.getSeatsMap();
         Seat dealer = seats.get(FlowSeat.DEALER.getNumber());

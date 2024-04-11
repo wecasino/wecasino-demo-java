@@ -27,6 +27,7 @@ public class DemoApplication  {
 	private static final Duration WECA_CATCHUP_PERIOD = Duration.ofMinutes(3);
 
     private final SicboRoundProcessor sicboRoundProcessor = new SicboRoundProcessor();
+    private final RouletteRoundProcessor rouletteRoundProcessor = new RouletteRoundProcessor();
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -128,6 +129,9 @@ public class DemoApplication  {
         } else if (gameType.equals(GameType.SICBO.name())) {
             //handle SICBO
             sicboRoundProcessor.ProcessRound(round, notifyType);
+		} else if (gameType.equals(GameType.ROULETTE.name())) {
+            //handle ROULETTE
+            rouletteRoundProcessor.ProcessRound(round, notifyType);
         }
 
         if (!msgNeedCatchup) {
