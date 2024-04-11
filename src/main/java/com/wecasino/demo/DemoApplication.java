@@ -1,25 +1,20 @@
 package com.wecasino.demo;
 
-import java.time.Duration;
-import java.util.Date;
-import java.util.Map;
-
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.rabbitmq.client.Channel;
+import com.wecasino.proto.games.GameType;
+import com.wecasino.proto.recorder.GameNotifyType;
+import com.wecasino.proto.recorder.RoundRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.annotation.Argument;
-import org.springframework.amqp.rabbit.annotation.Exchange;
-import org.springframework.amqp.rabbit.annotation.Queue;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.wecasino.proto.recorder.*;
-import com.google.protobuf.InvalidProtocolBufferException;
-import com.rabbitmq.client.Channel;
-import com.wecasino.proto.games.*;
+import java.time.Duration;
+import java.util.Date;
+import java.util.Map;
 
 @SpringBootApplication
 public class DemoApplication  {
@@ -30,6 +25,8 @@ public class DemoApplication  {
 	private static final String WECA_QUEUE = "yx-uat";
 	private static final String WECA_EXCHANGE = "game-exchange";
 	private static final Duration WECA_CATCHUP_PERIOD = Duration.ofMinutes(3);
+
+    private final SicboRoundProcessor sicboRoundProcessor = new SicboRoundProcessor();
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
@@ -87,17 +84,17 @@ public class DemoApplication  {
 			} else if  (msgType.equals(GameNotifyType.NOTIFY_SHOE_END.name())) {
 				processShoe(msg.getBody(), GameNotifyType.NOTIFY_SHOE_END);
 			} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_START.name())) {
-				processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_START);
+				 processRound(msg.getBody(), msgNeedCatchup, GameNotifyType.NOTIFY_ROUND_START);
 			} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_BET.name())) {
-				processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_BET);
-			// } else if  (msgType.equals(GameNotifyType.ROUND_NO_MORE_BET.name())) {
-			// 	processRound(msg.getBody(), GameNotifyType.ROUND_NO_MORE_BET);
+				 processRound(msg.getBody(), msgNeedCatchup, GameNotifyType.NOTIFY_ROUND_BET);
+            } else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_NO_MORE_BET.name())) {
+			 	 processRound(msg.getBody(), msgNeedCatchup, GameNotifyType.NOTIFY_ROUND_NO_MORE_BET);
 			} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_STEP.name())) {
-				processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_STEP);
+				 processRound(msg.getBody(), msgNeedCatchup, GameNotifyType.NOTIFY_ROUND_STEP);
 			} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_FINISH.name())) {
-				processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_FINISH);
+				 processRound(msg.getBody(), msgNeedCatchup, GameNotifyType.NOTIFY_ROUND_FINISH);
 			} else if  (msgType.equals(GameNotifyType.NOTIFY_ROUND_CANCEL.name())) {
-				processRound(msg.getBody(), GameNotifyType.NOTIFY_ROUND_CANCEL);
+				 processRound(msg.getBody(), msgNeedCatchup, GameNotifyType.NOTIFY_ROUND_CANCEL);
 			} else {
 				logger.warn("unhandled message type: " + msgType);
 			}
@@ -120,18 +117,23 @@ public class DemoApplication  {
 
 	}
 
-	protected void processRound(byte[] data, GameNotifyType notifyType) throws InvalidProtocolBufferException {
+    protected void processRound(byte[] data, boolean msgNeedCatchup, GameNotifyType notifyType) throws InvalidProtocolBufferException {
+        RoundRecord round = RoundRecord.newBuilder().mergeFrom(data).build();
 
-		RoundRecord round = RoundRecord.newBuilder().mergeFrom(data).build();
+        String gameType = round.getGameType();
+        if (gameType.equals(GameType.BACCARAT.name())) {
+            // handle BACCARAT
+        } else if (gameType.equals(GameType.LUCKYWHEEL.name())) {
+            //handle LUCKYWHEEL
+        } else if (gameType.equals(GameType.SICBO.name())) {
+            //handle SICBO
+            sicboRoundProcessor.ProcessRound(round, notifyType);
+        }
 
-		String gameType = round.getGameType();
+        if (!msgNeedCatchup) {
+            //Notify 遊戲端
+        }
 
-		if (gameType.equals(GameType.BACCARAT.name())) {
-			// handle BACCARAT
-		} else if (gameType.equals(GameType.LUCKYWHEEL.name())) {
-			//handle LUCKYWHEEL
-		}
-
-	}
+    }
 
 }
