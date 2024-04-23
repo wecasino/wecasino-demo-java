@@ -6,6 +6,7 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
+ * ShoeRecord
  * 靴紀錄
  * </pre>
  *
@@ -949,6 +950,7 @@ com.wecasino.proto.recorder.Deck defaultValue) {
   }
   /**
    * <pre>
+   * ShoeRecord
    * 靴紀錄
    * </pre>
    *

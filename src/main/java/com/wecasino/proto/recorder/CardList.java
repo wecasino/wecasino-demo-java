@@ -6,6 +6,7 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
+ * CardList
  * 卡牌列表
  * </pre>
  *
@@ -32,8 +33,6 @@ private static final long serialVersionUID = 0L;
   private CardList() {
     cardType_ = "";
     list_ = java.util.Collections.emptyList();
-    patterns_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -149,57 +148,19 @@ private static final long serialVersionUID = 0L;
     return list_.get(index);
   }
 
-  public static final int PATTERNS_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList patterns_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
+  public static final int PATTERN_FIELD_NUMBER = 3;
+  private int pattern_ = 0;
   /**
    * <pre>
    * 牌型
    * </pre>
    *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @return A list containing the patterns.
+   * <code>int32 pattern = 3 [json_name = "pattern"];</code>
+   * @return The pattern.
    */
-  public com.google.protobuf.ProtocolStringList
-      getPatternsList() {
-    return patterns_;
-  }
-  /**
-   * <pre>
-   * 牌型
-   * </pre>
-   *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @return The count of patterns.
-   */
-  public int getPatternsCount() {
-    return patterns_.size();
-  }
-  /**
-   * <pre>
-   * 牌型
-   * </pre>
-   *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @param index The index of the element to return.
-   * @return The patterns at the given index.
-   */
-  public java.lang.String getPatterns(int index) {
-    return patterns_.get(index);
-  }
-  /**
-   * <pre>
-   * 牌型
-   * </pre>
-   *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the patterns at the given index.
-   */
-  public com.google.protobuf.ByteString
-      getPatternsBytes(int index) {
-    return patterns_.getByteString(index);
+  @java.lang.Override
+  public int getPattern() {
+    return pattern_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -222,8 +183,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < list_.size(); i++) {
       output.writeMessage(2, list_.get(i));
     }
-    for (int i = 0; i < patterns_.size(); i++) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 3, patterns_.getRaw(i));
+    if (pattern_ != 0) {
+      output.writeInt32(3, pattern_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -241,13 +202,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, list_.get(i));
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < patterns_.size(); i++) {
-        dataSize += computeStringSizeNoTag(patterns_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getPatternsList().size();
+    if (pattern_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, pattern_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -268,8 +225,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCardType())) return false;
     if (!getListList()
         .equals(other.getListList())) return false;
-    if (!getPatternsList()
-        .equals(other.getPatternsList())) return false;
+    if (getPattern()
+        != other.getPattern()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -287,10 +244,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LIST_FIELD_NUMBER;
       hash = (53 * hash) + getListList().hashCode();
     }
-    if (getPatternsCount() > 0) {
-      hash = (37 * hash) + PATTERNS_FIELD_NUMBER;
-      hash = (53 * hash) + getPatternsList().hashCode();
-    }
+    hash = (37 * hash) + PATTERN_FIELD_NUMBER;
+    hash = (53 * hash) + getPattern();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -390,6 +345,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * CardList
    * 卡牌列表
    * </pre>
    *
@@ -434,8 +390,7 @@ private static final long serialVersionUID = 0L;
         listBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      patterns_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      pattern_ = 0;
       return this;
     }
 
@@ -486,8 +441,7 @@ private static final long serialVersionUID = 0L;
         result.cardType_ = cardType_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        patterns_.makeImmutable();
-        result.patterns_ = patterns_;
+        result.pattern_ = pattern_;
       }
     }
 
@@ -534,15 +488,8 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
-      if (!other.patterns_.isEmpty()) {
-        if (patterns_.isEmpty()) {
-          patterns_ = other.patterns_;
-          bitField0_ |= 0x00000004;
-        } else {
-          ensurePatternsIsMutable();
-          patterns_.addAll(other.patterns_);
-        }
-        onChanged();
+      if (other.getPattern() != 0) {
+        setPattern(other.getPattern());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -588,12 +535,11 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 18
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              ensurePatternsIsMutable();
-              patterns_.add(s);
+            case 24: {
+              pattern_ = input.readInt32();
+              bitField0_ |= 0x00000004;
               break;
-            } // case 26
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -995,78 +941,31 @@ private static final long serialVersionUID = 0L;
       return listBuilder_;
     }
 
-    private com.google.protobuf.LazyStringArrayList patterns_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    private void ensurePatternsIsMutable() {
-      if (!patterns_.isModifiable()) {
-        patterns_ = new com.google.protobuf.LazyStringArrayList(patterns_);
-      }
-      bitField0_ |= 0x00000004;
-    }
+    private int pattern_ ;
     /**
      * <pre>
      * 牌型
      * </pre>
      *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @return A list containing the patterns.
+     * <code>int32 pattern = 3 [json_name = "pattern"];</code>
+     * @return The pattern.
      */
-    public com.google.protobuf.ProtocolStringList
-        getPatternsList() {
-      patterns_.makeImmutable();
-      return patterns_;
+    @java.lang.Override
+    public int getPattern() {
+      return pattern_;
     }
     /**
      * <pre>
      * 牌型
      * </pre>
      *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @return The count of patterns.
-     */
-    public int getPatternsCount() {
-      return patterns_.size();
-    }
-    /**
-     * <pre>
-     * 牌型
-     * </pre>
-     *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @param index The index of the element to return.
-     * @return The patterns at the given index.
-     */
-    public java.lang.String getPatterns(int index) {
-      return patterns_.get(index);
-    }
-    /**
-     * <pre>
-     * 牌型
-     * </pre>
-     *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the patterns at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getPatternsBytes(int index) {
-      return patterns_.getByteString(index);
-    }
-    /**
-     * <pre>
-     * 牌型
-     * </pre>
-     *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @param index The index to set the value at.
-     * @param value The patterns to set.
+     * <code>int32 pattern = 3 [json_name = "pattern"];</code>
+     * @param value The pattern to set.
      * @return This builder for chaining.
      */
-    public Builder setPatterns(
-        int index, java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensurePatternsIsMutable();
-      patterns_.set(index, value);
+    public Builder setPattern(int value) {
+
+      pattern_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
@@ -1076,68 +975,12 @@ private static final long serialVersionUID = 0L;
      * 牌型
      * </pre>
      *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @param value The patterns to add.
+     * <code>int32 pattern = 3 [json_name = "pattern"];</code>
      * @return This builder for chaining.
      */
-    public Builder addPatterns(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      ensurePatternsIsMutable();
-      patterns_.add(value);
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 牌型
-     * </pre>
-     *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @param values The patterns to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllPatterns(
-        java.lang.Iterable<java.lang.String> values) {
-      ensurePatternsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, patterns_);
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 牌型
-     * </pre>
-     *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPatterns() {
-      patterns_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * 牌型
-     * </pre>
-     *
-     * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-     * @param value The bytes of the patterns to add.
-     * @return This builder for chaining.
-     */
-    public Builder addPatternsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      ensurePatternsIsMutable();
-      patterns_.add(value);
-      bitField0_ |= 0x00000004;
+    public Builder clearPattern() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pattern_ = 0;
       onChanged();
       return this;
     }

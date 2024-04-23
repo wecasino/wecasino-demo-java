@@ -40,14 +40,10 @@ public final class RecordProto {
       "UNSPECIFIED\020\000\022\017\n\013ROUND_START\020\001\022\022\n\016ROUND_" +
       "FINISHED\020\002\022\022\n\016ROUND_CANCELED\020\003\022\r\n\tROUND_" +
       "BET\020\004\022\017\n\013NO_MORE_BET\020\005\022\016\n\nTHROW_DICE\020\010\022\027" +
-      "\n\023PITBOSS_MODIFY_BOWL\020\020*c\n\020ResultRecordT" +
-      "ype\022\"\n\036RESULT_RECORD_TYPE_UNSPECIFIED\020\000\022" +
-      "\020\n\014ROUND_FINISH\020\001\022\031\n\025PITBOSS_MODIFY_RESU" +
-      "LT\020\002B\257\001\n\036com.wecasino.proto.games.sicboB" +
-      "\013RecordProtoP\001Z3github.com/wecasino/weca" +
-      "sino-proto/pbgo/games/sicbo\242\002\003GSX\252\002\013Game" +
-      "s.Sicbo\312\002\013Games\\Sicbo\342\002\027Games\\Sicbo\\GPBM" +
-      "etadata\352\002\014Games::Sicbob\006proto3"
+      "\n\023PITBOSS_MODIFY_BOWL\020\020Bz\n\036com.wecasino." +
+      "proto.games.sicboB\013RecordProtoP\001\242\002\003GSX\252\002" +
+      "\013Games.Sicbo\312\002\013Games\\Sicbo\342\002\027Games\\Sicbo" +
+      "\\GPBMetadata\352\002\014Games::Sicbob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

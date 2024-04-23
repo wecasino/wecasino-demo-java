@@ -5,6 +5,11 @@
 package com.wecasino.proto.recorder;
 
 /**
+ * <pre>
+ * Artcle
+ * 文章
+ * </pre>
+ *
  * Protobuf type {@code recorder.Article}
  */
 public final class Article extends
@@ -610,6 +615,11 @@ com.wecasino.proto.recorder.Article defaultValue) {
     return builder;
   }
   /**
+   * <pre>
+   * Artcle
+   * 文章
+   * </pre>
+   *
    * Protobuf type {@code recorder.Article}
    */
   public static final class Builder extends

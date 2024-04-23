@@ -5,6 +5,11 @@
 package com.wecasino.proto.recorder;
 
 /**
+ * <pre>
+ * Dealer
+ * 荷官資訊
+ * </pre>
+ *
  * Protobuf type {@code recorder.Dealer}
  */
 public final class Dealer extends
@@ -621,6 +626,11 @@ java.lang.String defaultValue) {
     return builder;
   }
   /**
+   * <pre>
+   * Dealer
+   * 荷官資訊
+   * </pre>
+   *
    * Protobuf type {@code recorder.Dealer}
    */
   public static final class Builder extends

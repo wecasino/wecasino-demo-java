@@ -69,39 +69,8 @@ public interface CardListOrBuilder extends
    * 牌型
    * </pre>
    *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @return A list containing the patterns.
+   * <code>int32 pattern = 3 [json_name = "pattern"];</code>
+   * @return The pattern.
    */
-  java.util.List<java.lang.String>
-      getPatternsList();
-  /**
-   * <pre>
-   * 牌型
-   * </pre>
-   *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @return The count of patterns.
-   */
-  int getPatternsCount();
-  /**
-   * <pre>
-   * 牌型
-   * </pre>
-   *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @param index The index of the element to return.
-   * @return The patterns at the given index.
-   */
-  java.lang.String getPatterns(int index);
-  /**
-   * <pre>
-   * 牌型
-   * </pre>
-   *
-   * <code>repeated string patterns = 3 [json_name = "patterns"];</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the patterns at the given index.
-   */
-  com.google.protobuf.ByteString
-      getPatternsBytes(int index);
+  int getPattern();
 }

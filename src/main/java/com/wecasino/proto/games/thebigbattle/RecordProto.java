@@ -45,15 +45,11 @@ public final class RecordProto {
       "\n\tROUND_BET\020\014\022\017\n\013NO_MORE_BET\020\r\022\r\n\tSHOW_H" +
       "AND\020\020\022\r\n\tSHOW_LEFT\020\021\022\016\n\nSHOW_RIGHT\020\022\022\022\n\016" +
       "DEALER_CONFIRM\020\024\022\031\n\025PITBOSS_MODIFY_NORMA" +
-      "L\020\030*c\n\020ResultRecordType\022\"\n\036RESULT_RECORD" +
-      "_TYPE_UNSPECIFIED\020\000\022\020\n\014ROUND_FINISH\020\001\022\031\n" +
-      "\025PITBOSS_MODIFY_RESULT\020\002B\331\001\n%com.wecasin" +
-      "o.proto.games.thebigbattleB\013RecordProtoP" +
-      "\001Z:github.com/wecasino/wecasino-proto/pb" +
-      "go/games/thebigbattle\242\002\003GTX\252\002\022Games.Theb" +
-      "igbattle\312\002\022Games\\Thebigbattle\342\002\036Games\\Th" +
-      "ebigbattle\\GPBMetadata\352\002\023Games::Thebigba" +
-      "ttleb\006proto3"
+      "L\020\030B\235\001\n%com.wecasino.proto.games.thebigb" +
+      "attleB\013RecordProtoP\001\242\002\003GTX\252\002\022Games.Thebi" +
+      "gbattle\312\002\022Games\\Thebigbattle\342\002\036Games\\The" +
+      "bigbattle\\GPBMetadata\352\002\023Games::Thebigbat" +
+      "tleb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

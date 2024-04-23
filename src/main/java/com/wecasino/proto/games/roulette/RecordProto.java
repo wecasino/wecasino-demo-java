@@ -43,14 +43,11 @@ public final class RecordProto {
       "RE_BET\020\005\022\016\n\nSPIN_WHEEL\020\010\022\027\n\023PITBOSS_MODI" +
       "FY_BOWL\020\020*c\n\020ResultRecordType\022\"\n\036RESULT_" +
       "RECORD_TYPE_UNSPECIFIED\020\000\022\020\n\014ROUND_FINIS" +
-      "H\020\001\022\031\n\025PITBOSS_MODIFY_RESULT\020\002*<\n\014Cancel" +
-      "Reason\022\035\n\031CANCEL_REASON_UNSPECIFIED\020\000\022\r\n" +
-      "\tNO_REASON\020\001B\301\001\n!com.wecasino.proto.game" +
-      "s.rouletteB\013RecordProtoP\001Z6github.com/we" +
-      "casino/wecasino-proto/pbgo/games/roulett" +
-      "e\242\002\003GRX\252\002\016Games.Roulette\312\002\016Games\\Roulett" +
-      "e\342\002\032Games\\Roulette\\GPBMetadata\352\002\017Games::" +
-      "Rouletteb\006proto3"
+      "H\020\001\022\031\n\025PITBOSS_MODIFY_RESULT\020\002B\211\001\n!com.w" +
+      "ecasino.proto.games.rouletteB\013RecordProt" +
+      "oP\001\242\002\003GRX\252\002\016Games.Roulette\312\002\016Games\\Roule" +
+      "tte\342\002\032Games\\Roulette\\GPBMetadata\352\002\017Games" +
+      "::Rouletteb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

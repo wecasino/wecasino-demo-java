@@ -5,6 +5,11 @@
 package com.wecasino.proto.games;
 
 /**
+ * <pre>
+ * GameType 
+ * 遊戲類型
+ * </pre>
+ *
  * Protobuf enum {@code games.GameType}
  */
 public enum GameType

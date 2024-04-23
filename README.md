@@ -3,6 +3,16 @@
 ### references
 - https://www.rabbitmq.com/tutorials/tutorial-one-spring-amqp
 
+### generate proto java
+
+```sh
+
+# https://buf.build/docs/installation
+# brew install bufbuild/buf/buf
+
+buf generate buf.build/wecasino/wecasino:v0.7.1
+
+```
 
 ### run demo app
 

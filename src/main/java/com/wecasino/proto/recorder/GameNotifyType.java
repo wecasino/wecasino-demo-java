@@ -27,6 +27,14 @@ public enum GameNotifyType
   NOTIFY_GAME_PROVIDE_STATE_CHANGE(1),
   /**
    * <pre>
+   * 通知遊戲流程截圖
+   * </pre>
+   *
+   * <code>NOTIFY_GAME_CAPTURE = 5;</code>
+   */
+  NOTIFY_GAME_CAPTURE(5),
+  /**
+   * <pre>
    * 通知遊戲流程荷官登入
    * </pre>
    *
@@ -137,6 +145,14 @@ public enum GameNotifyType
    * <code>NOTIFY_ROUND_PLAYBACK = 19;</code>
    */
   NOTIFY_ROUND_PLAYBACK(19),
+  /**
+   * <pre>
+   * 通知遊戲局事後取消
+   * </pre>
+   *
+   * <code>NOTIFY_ROUND_CANCEL_AFTER_ROUND = 20;</code>
+   */
+  NOTIFY_ROUND_CANCEL_AFTER_ROUND(20),
   UNRECOGNIZED(-1),
   ;
 
@@ -165,6 +181,14 @@ public enum GameNotifyType
    * <code>NOTIFY_GAME_PROVIDE_STATE_CHANGE = 1;</code>
    */
   public static final int NOTIFY_GAME_PROVIDE_STATE_CHANGE_VALUE = 1;
+  /**
+   * <pre>
+   * 通知遊戲流程截圖
+   * </pre>
+   *
+   * <code>NOTIFY_GAME_CAPTURE = 5;</code>
+   */
+  public static final int NOTIFY_GAME_CAPTURE_VALUE = 5;
   /**
    * <pre>
    * 通知遊戲流程荷官登入
@@ -277,6 +301,14 @@ public enum GameNotifyType
    * <code>NOTIFY_ROUND_PLAYBACK = 19;</code>
    */
   public static final int NOTIFY_ROUND_PLAYBACK_VALUE = 19;
+  /**
+   * <pre>
+   * 通知遊戲局事後取消
+   * </pre>
+   *
+   * <code>NOTIFY_ROUND_CANCEL_AFTER_ROUND = 20;</code>
+   */
+  public static final int NOTIFY_ROUND_CANCEL_AFTER_ROUND_VALUE = 20;
 
 
   public final int getNumber() {
@@ -305,6 +337,7 @@ public enum GameNotifyType
     switch (value) {
       case 0: return GAME_NOTIFY_TYPE_UNSPECIFIED;
       case 1: return NOTIFY_GAME_PROVIDE_STATE_CHANGE;
+      case 5: return NOTIFY_GAME_CAPTURE;
       case 6: return NOTIFY_GAME_DEALER_LOGIN;
       case 7: return NOTIFY_GAME_DEALER_LOGOUT;
       case 8: return NOTIFY_GAME_CHANGING_SHOE;
@@ -319,6 +352,7 @@ public enum GameNotifyType
       case 17: return NOTIFY_ROUND_FINISH;
       case 18: return NOTIFY_ROUND_CANCEL;
       case 19: return NOTIFY_ROUND_PLAYBACK;
+      case 20: return NOTIFY_ROUND_CANCEL_AFTER_ROUND;
       default: return null;
     }
   }

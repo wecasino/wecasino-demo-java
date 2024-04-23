@@ -6,6 +6,7 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
+ * Step
  * 遊戲步驟
  * </pre>
  *
@@ -592,6 +593,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Step
    * 遊戲步驟
    * </pre>
    *

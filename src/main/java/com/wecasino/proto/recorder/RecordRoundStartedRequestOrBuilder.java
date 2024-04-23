@@ -288,4 +288,112 @@ java.lang.String defaultValue);
    * <code>.google.protobuf.Timestamp ts_start = 16 [json_name = "tsStart"];</code>
    */
   com.google.protobuf.TimestampOrBuilder getTsStartOrBuilder();
+
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  int getPlayersCount();
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  boolean containsPlayers(
+      int key);
+  /**
+   * Use {@link #getPlayersMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.Integer, java.lang.String>
+  getPlayers();
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  java.util.Map<java.lang.Integer, java.lang.String>
+  getPlayersMap();
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  /* nullable */
+java.lang.String getPlayersOrDefault(
+      int key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  java.lang.String getPlayersOrThrow(
+      int key);
+
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  int getPlayersNameCount();
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  boolean containsPlayersName(
+      java.lang.String key);
+  /**
+   * Use {@link #getPlayersNameMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getPlayersName();
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getPlayersNameMap();
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  /* nullable */
+java.lang.String getPlayersNameOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  java.lang.String getPlayersNameOrThrow(
+      java.lang.String key);
 }

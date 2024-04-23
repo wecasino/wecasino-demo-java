@@ -5,6 +5,11 @@
 package com.wecasino.proto.recorder;
 
 /**
+ * <pre>
+ * VerifyGameRequest
+ * 驗證遊戲需求
+ * </pre>
+ *
  * Protobuf type {@code recorder.VerifyGameRequest}
  */
 public final class VerifyGameRequest extends
@@ -376,6 +381,11 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * VerifyGameRequest
+   * 驗證遊戲需求
+   * </pre>
+   *
    * Protobuf type {@code recorder.VerifyGameRequest}
    */
   public static final class Builder extends

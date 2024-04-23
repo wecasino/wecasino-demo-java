@@ -5,12 +5,17 @@
 package com.wecasino.proto.recorder;
 
 /**
- * Protobuf type {@code recorder.GetDealerResponse}
+ * <pre>
+ * ListDealersResponse
+ * 取得荷官列表
+ * </pre>
+ *
+ * Protobuf type {@code recorder.ListDealersResponse}
  */
-public final class GetDealerResponse extends
+public final class ListDealersResponse extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:recorder.GetDealerResponse)
-    GetDealerResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:recorder.ListDealersResponse)
+    ListDealersResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -19,27 +24,27 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 26,
       /* patch= */ 1,
       /* suffix= */ "",
-      GetDealerResponse.class.getName());
+      ListDealersResponse.class.getName());
   }
-  // Use GetDealerResponse.newBuilder() to construct.
-  private GetDealerResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use ListDealersResponse.newBuilder() to construct.
+  private ListDealersResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private GetDealerResponse() {
+  private ListDealersResponse() {
     dealers_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetDealerResponse_descriptor;
+    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListDealersResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetDealerResponse_fieldAccessorTable
+    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListDealersResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.wecasino.proto.recorder.GetDealerResponse.class, com.wecasino.proto.recorder.GetDealerResponse.Builder.class);
+            com.wecasino.proto.recorder.ListDealersResponse.class, com.wecasino.proto.recorder.ListDealersResponse.Builder.class);
   }
 
   public static final int DEALERS_FIELD_NUMBER = 1;
@@ -143,10 +148,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.wecasino.proto.recorder.GetDealerResponse)) {
+    if (!(obj instanceof com.wecasino.proto.recorder.ListDealersResponse)) {
       return super.equals(obj);
     }
-    com.wecasino.proto.recorder.GetDealerResponse other = (com.wecasino.proto.recorder.GetDealerResponse) obj;
+    com.wecasino.proto.recorder.ListDealersResponse other = (com.wecasino.proto.recorder.ListDealersResponse) obj;
 
     if (!getDealersList()
         .equals(other.getDealersList())) return false;
@@ -170,44 +175,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(byte[] data)
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(java.io.InputStream input)
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -215,26 +220,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.wecasino.proto.recorder.GetDealerResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.wecasino.proto.recorder.ListDealersResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.wecasino.proto.recorder.GetDealerResponse parseDelimitedFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.wecasino.proto.recorder.GetDealerResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListDealersResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -247,7 +252,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.wecasino.proto.recorder.GetDealerResponse prototype) {
+  public static Builder newBuilder(com.wecasino.proto.recorder.ListDealersResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -263,26 +268,31 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code recorder.GetDealerResponse}
+   * <pre>
+   * ListDealersResponse
+   * 取得荷官列表
+   * </pre>
+   *
+   * Protobuf type {@code recorder.ListDealersResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:recorder.GetDealerResponse)
-      com.wecasino.proto.recorder.GetDealerResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:recorder.ListDealersResponse)
+      com.wecasino.proto.recorder.ListDealersResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetDealerResponse_descriptor;
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListDealersResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetDealerResponse_fieldAccessorTable
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListDealersResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.wecasino.proto.recorder.GetDealerResponse.class, com.wecasino.proto.recorder.GetDealerResponse.Builder.class);
+              com.wecasino.proto.recorder.ListDealersResponse.class, com.wecasino.proto.recorder.ListDealersResponse.Builder.class);
     }
 
-    // Construct using com.wecasino.proto.recorder.GetDealerResponse.newBuilder()
+    // Construct using com.wecasino.proto.recorder.ListDealersResponse.newBuilder()
     private Builder() {
 
     }
@@ -309,17 +319,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetDealerResponse_descriptor;
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListDealersResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.GetDealerResponse getDefaultInstanceForType() {
-      return com.wecasino.proto.recorder.GetDealerResponse.getDefaultInstance();
+    public com.wecasino.proto.recorder.ListDealersResponse getDefaultInstanceForType() {
+      return com.wecasino.proto.recorder.ListDealersResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.GetDealerResponse build() {
-      com.wecasino.proto.recorder.GetDealerResponse result = buildPartial();
+    public com.wecasino.proto.recorder.ListDealersResponse build() {
+      com.wecasino.proto.recorder.ListDealersResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -327,15 +337,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.GetDealerResponse buildPartial() {
-      com.wecasino.proto.recorder.GetDealerResponse result = new com.wecasino.proto.recorder.GetDealerResponse(this);
+    public com.wecasino.proto.recorder.ListDealersResponse buildPartial() {
+      com.wecasino.proto.recorder.ListDealersResponse result = new com.wecasino.proto.recorder.ListDealersResponse(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.wecasino.proto.recorder.GetDealerResponse result) {
+    private void buildPartialRepeatedFields(com.wecasino.proto.recorder.ListDealersResponse result) {
       if (dealersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dealers_ = java.util.Collections.unmodifiableList(dealers_);
@@ -347,22 +357,22 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.wecasino.proto.recorder.GetDealerResponse result) {
+    private void buildPartial0(com.wecasino.proto.recorder.ListDealersResponse result) {
       int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.wecasino.proto.recorder.GetDealerResponse) {
-        return mergeFrom((com.wecasino.proto.recorder.GetDealerResponse)other);
+      if (other instanceof com.wecasino.proto.recorder.ListDealersResponse) {
+        return mergeFrom((com.wecasino.proto.recorder.ListDealersResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.wecasino.proto.recorder.GetDealerResponse other) {
-      if (other == com.wecasino.proto.recorder.GetDealerResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.wecasino.proto.recorder.ListDealersResponse other) {
+      if (other == com.wecasino.proto.recorder.ListDealersResponse.getDefaultInstance()) return this;
       if (dealersBuilder_ == null) {
         if (!other.dealers_.isEmpty()) {
           if (dealers_.isEmpty()) {
@@ -757,23 +767,23 @@ private static final long serialVersionUID = 0L;
       return dealersBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:recorder.GetDealerResponse)
+    // @@protoc_insertion_point(builder_scope:recorder.ListDealersResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:recorder.GetDealerResponse)
-  private static final com.wecasino.proto.recorder.GetDealerResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:recorder.ListDealersResponse)
+  private static final com.wecasino.proto.recorder.ListDealersResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.wecasino.proto.recorder.GetDealerResponse();
+    DEFAULT_INSTANCE = new com.wecasino.proto.recorder.ListDealersResponse();
   }
 
-  public static com.wecasino.proto.recorder.GetDealerResponse getDefaultInstance() {
+  public static com.wecasino.proto.recorder.ListDealersResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetDealerResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetDealerResponse>() {
+  private static final com.google.protobuf.Parser<ListDealersResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ListDealersResponse>() {
     @java.lang.Override
-    public GetDealerResponse parsePartialFrom(
+    public ListDealersResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -792,17 +802,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<GetDealerResponse> parser() {
+  public static com.google.protobuf.Parser<ListDealersResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetDealerResponse> getParserForType() {
+  public com.google.protobuf.Parser<ListDealersResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.wecasino.proto.recorder.GetDealerResponse getDefaultInstanceForType() {
+  public com.wecasino.proto.recorder.ListDealersResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

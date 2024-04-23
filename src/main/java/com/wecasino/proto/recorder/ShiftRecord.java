@@ -6,7 +6,8 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
- * 排班
+ * ShiftRecord
+ * 排班記錄
  * </pre>
  *
  * Protobuf type {@code recorder.ShiftRecord}
@@ -1035,7 +1036,8 @@ java.lang.String defaultValue) {
   }
   /**
    * <pre>
-   * 排班
+   * ShiftRecord
+   * 排班記錄
    * </pre>
    *
    * Protobuf type {@code recorder.ShiftRecord}

@@ -58,11 +58,10 @@ public final class PokerProto {
       "D_7\020G\022\r\n\tDIAMOND_8\020H\022\r\n\tDIAMOND_9\020I\022\016\n\nD" +
       "IAMOND_10\020J\022\r\n\tDIAMOND_J\020K\022\r\n\tDIAMOND_Q\020" +
       "L\022\r\n\tDIAMOND_K\020M\022\017\n\013JOKER_COLOR\020^\022\017\n\013JOK" +
-      "ER_BLACK\020_\022\r\n\tSUIT_MASK\020pB\211\001\n\030com.wecasi" +
-      "no.proto.cardsB\nPokerProtoP\001Z-github.com" +
-      "/wecasino/wecasino-proto/pbgo/cards\242\002\003CX" +
-      "X\252\002\005Cards\312\002\005Cards\342\002\021Cards\\GPBMetadata\352\002\005" +
-      "Cardsb\006proto3"
+      "ER_BLACK\020_\022\r\n\tSUIT_MASK\020pBZ\n\030com.wecasin" +
+      "o.proto.cardsB\nPokerProtoP\001\242\002\003CXX\252\002\005Card" +
+      "s\312\002\005Cards\342\002\021Cards\\GPBMetadata\352\002\005Cardsb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

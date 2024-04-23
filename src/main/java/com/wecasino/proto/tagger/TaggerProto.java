@@ -69,11 +69,10 @@ public final class TaggerProto {
       "otobuf/descriptor.proto:3\n\004tags\022\035.google" +
       ".protobuf.FieldOptions\030\303\3403 \001(\tR\004tags:>\n\n" +
       "oneof_tags\022\035.google.protobuf.OneofOption" +
-      "s\030\303\3403 \001(\tR\toneofTagsB\220\001\n\031com.wecasino.pr" +
-      "oto.taggerB\013TaggerProtoP\001Z.github.com/we" +
-      "casino/wecasino-proto/pbgo/tagger\242\002\003TXX\252" +
-      "\002\006Tagger\312\002\006Tagger\342\002\022Tagger\\GPBMetadata\352\002" +
-      "\006Taggerb\006proto3"
+      "s\030\303\3403 \001(\tR\toneofTagsB`\n\031com.wecasino.pro" +
+      "to.taggerB\013TaggerProtoP\001\242\002\003TXX\252\002\006Tagger\312" +
+      "\002\006Tagger\342\002\022Tagger\\GPBMetadata\352\002\006Taggerb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

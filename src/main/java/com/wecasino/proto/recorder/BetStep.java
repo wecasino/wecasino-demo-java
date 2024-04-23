@@ -6,6 +6,7 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
+ * BetStep
  * 下注步驟
  * </pre>
  *

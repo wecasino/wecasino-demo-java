@@ -35,7 +35,7 @@ public class DemoApplication  {
 
 	@RabbitListener(
 		bindings = @QueueBinding(
-			value = @Queue(value = WECA_QUEUE, durable = "false", autoDelete = "true", exclusive = "false"),
+			value = @Queue(value = WECA_QUEUE, durable = "true", autoDelete = "false", exclusive = "false"),
 			exchange = @Exchange(value = WECA_EXCHANGE, autoDelete = "false"),
 			arguments = {
 					@Argument(name = "x-match", value = "any"),

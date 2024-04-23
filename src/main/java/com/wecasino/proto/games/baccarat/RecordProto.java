@@ -57,14 +57,11 @@ public final class RecordProto {
       "_NORMAL\020\030\022\037\n\033PITBOSS_MODIFY_PLAYER_EXTRA" +
       "\020\031\022\037\n\033PITBOSS_MODIFY_BANKER_EXTRA\020\032*8\n\010G" +
       "ameSeat\022\024\n\020SEAT_UNSPECIFIED\020\000\022\n\n\006PLAYER\020" +
-      "\002\022\n\n\006BANKER\020\003*c\n\020ResultRecordType\022\"\n\036RES" +
-      "ULT_RECORD_TYPE_UNSPECIFIED\020\000\022\020\n\014ROUND_F" +
-      "INISH\020\001\022\031\n\025PITBOSS_MODIFY_RESULT\020\002B\301\001\n!c" +
-      "om.wecasino.proto.games.baccaratB\013Record" +
-      "ProtoP\001Z6github.com/wecasino/wecasino-pr" +
-      "oto/pbgo/games/baccarat\242\002\003GBX\252\002\016Games.Ba" +
-      "ccarat\312\002\016Games\\Baccarat\342\002\032Games\\Baccarat" +
-      "\\GPBMetadata\352\002\017Games::Baccaratb\006proto3"
+      "\002\022\n\n\006BANKER\020\003B\211\001\n!com.wecasino.proto.gam" +
+      "es.baccaratB\013RecordProtoP\001\242\002\003GBX\252\002\016Games" +
+      ".Baccarat\312\002\016Games\\Baccarat\342\002\032Games\\Bacca" +
+      "rat\\GPBMetadata\352\002\017Games::Baccaratb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

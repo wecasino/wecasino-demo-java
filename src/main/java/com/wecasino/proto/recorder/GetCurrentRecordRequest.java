@@ -5,12 +5,12 @@
 package com.wecasino.proto.recorder;
 
 /**
- * Protobuf type {@code recorder.FetchGameProvideRequest}
+ * Protobuf type {@code recorder.GetCurrentRecordRequest}
  */
-public final class FetchGameProvideRequest extends
+public final class GetCurrentRecordRequest extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:recorder.FetchGameProvideRequest)
-    FetchGameProvideRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:recorder.GetCurrentRecordRequest)
+    GetCurrentRecordRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -19,74 +19,38 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 26,
       /* patch= */ 1,
       /* suffix= */ "",
-      FetchGameProvideRequest.class.getName());
+      GetCurrentRecordRequest.class.getName());
   }
-  // Use FetchGameProvideRequest.newBuilder() to construct.
-  private FetchGameProvideRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use GetCurrentRecordRequest.newBuilder() to construct.
+  private GetCurrentRecordRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private FetchGameProvideRequest() {
-    platform_ = "";
+  private GetCurrentRecordRequest() {
     gameCode_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchGameProvideRequest_descriptor;
+    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetCurrentRecordRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchGameProvideRequest_fieldAccessorTable
+    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetCurrentRecordRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.wecasino.proto.recorder.FetchGameProvideRequest.class, com.wecasino.proto.recorder.FetchGameProvideRequest.Builder.class);
+            com.wecasino.proto.recorder.GetCurrentRecordRequest.class, com.wecasino.proto.recorder.GetCurrentRecordRequest.Builder.class);
   }
 
-  public static final int PLATFORM_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object platform_ = "";
-  /**
-   * <code>string platform = 1 [json_name = "platform"];</code>
-   * @return The platform.
-   */
-  @java.lang.Override
-  public java.lang.String getPlatform() {
-    java.lang.Object ref = platform_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      platform_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string platform = 1 [json_name = "platform"];</code>
-   * @return The bytes for platform.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPlatformBytes() {
-    java.lang.Object ref = platform_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      platform_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int GAME_CODE_FIELD_NUMBER = 2;
+  public static final int GAME_CODE_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object gameCode_ = "";
   /**
-   * <code>string game_code = 2 [json_name = "gameCode"];</code>
+   * <pre>
+   * 遊戲代碼
+   * </pre>
+   *
+   * <code>string game_code = 1 [json_name = "gameCode", (.google.api.field_behavior) = REQUIRED];</code>
    * @return The gameCode.
    */
   @java.lang.Override
@@ -103,7 +67,11 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string game_code = 2 [json_name = "gameCode"];</code>
+   * <pre>
+   * 遊戲代碼
+   * </pre>
+   *
+   * <code>string game_code = 1 [json_name = "gameCode", (.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for gameCode.
    */
   @java.lang.Override
@@ -135,11 +103,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(platform_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 1, platform_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gameCode_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, gameCode_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, gameCode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -150,11 +115,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(platform_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, platform_);
-    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gameCode_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, gameCode_);
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, gameCode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,13 +128,11 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.wecasino.proto.recorder.FetchGameProvideRequest)) {
+    if (!(obj instanceof com.wecasino.proto.recorder.GetCurrentRecordRequest)) {
       return super.equals(obj);
     }
-    com.wecasino.proto.recorder.FetchGameProvideRequest other = (com.wecasino.proto.recorder.FetchGameProvideRequest) obj;
+    com.wecasino.proto.recorder.GetCurrentRecordRequest other = (com.wecasino.proto.recorder.GetCurrentRecordRequest) obj;
 
-    if (!getPlatform()
-        .equals(other.getPlatform())) return false;
     if (!getGameCode()
         .equals(other.getGameCode())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -186,8 +146,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
-    hash = (53 * hash) + getPlatform().hashCode();
     hash = (37 * hash) + GAME_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getGameCode().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -195,44 +153,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(byte[] data)
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(java.io.InputStream input)
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -240,26 +198,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseDelimitedFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest parseFrom(
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -272,7 +230,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.wecasino.proto.recorder.FetchGameProvideRequest prototype) {
+  public static Builder newBuilder(com.wecasino.proto.recorder.GetCurrentRecordRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -288,26 +246,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code recorder.FetchGameProvideRequest}
+   * Protobuf type {@code recorder.GetCurrentRecordRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:recorder.FetchGameProvideRequest)
-      com.wecasino.proto.recorder.FetchGameProvideRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:recorder.GetCurrentRecordRequest)
+      com.wecasino.proto.recorder.GetCurrentRecordRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchGameProvideRequest_descriptor;
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetCurrentRecordRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchGameProvideRequest_fieldAccessorTable
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetCurrentRecordRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.wecasino.proto.recorder.FetchGameProvideRequest.class, com.wecasino.proto.recorder.FetchGameProvideRequest.Builder.class);
+              com.wecasino.proto.recorder.GetCurrentRecordRequest.class, com.wecasino.proto.recorder.GetCurrentRecordRequest.Builder.class);
     }
 
-    // Construct using com.wecasino.proto.recorder.FetchGameProvideRequest.newBuilder()
+    // Construct using com.wecasino.proto.recorder.GetCurrentRecordRequest.newBuilder()
     private Builder() {
 
     }
@@ -321,7 +279,6 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      platform_ = "";
       gameCode_ = "";
       return this;
     }
@@ -329,17 +286,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchGameProvideRequest_descriptor;
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_GetCurrentRecordRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.FetchGameProvideRequest getDefaultInstanceForType() {
-      return com.wecasino.proto.recorder.FetchGameProvideRequest.getDefaultInstance();
+    public com.wecasino.proto.recorder.GetCurrentRecordRequest getDefaultInstanceForType() {
+      return com.wecasino.proto.recorder.GetCurrentRecordRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.FetchGameProvideRequest build() {
-      com.wecasino.proto.recorder.FetchGameProvideRequest result = buildPartial();
+    public com.wecasino.proto.recorder.GetCurrentRecordRequest build() {
+      com.wecasino.proto.recorder.GetCurrentRecordRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -347,43 +304,35 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.FetchGameProvideRequest buildPartial() {
-      com.wecasino.proto.recorder.FetchGameProvideRequest result = new com.wecasino.proto.recorder.FetchGameProvideRequest(this);
+    public com.wecasino.proto.recorder.GetCurrentRecordRequest buildPartial() {
+      com.wecasino.proto.recorder.GetCurrentRecordRequest result = new com.wecasino.proto.recorder.GetCurrentRecordRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(com.wecasino.proto.recorder.FetchGameProvideRequest result) {
+    private void buildPartial0(com.wecasino.proto.recorder.GetCurrentRecordRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.platform_ = platform_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.gameCode_ = gameCode_;
       }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.wecasino.proto.recorder.FetchGameProvideRequest) {
-        return mergeFrom((com.wecasino.proto.recorder.FetchGameProvideRequest)other);
+      if (other instanceof com.wecasino.proto.recorder.GetCurrentRecordRequest) {
+        return mergeFrom((com.wecasino.proto.recorder.GetCurrentRecordRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.wecasino.proto.recorder.FetchGameProvideRequest other) {
-      if (other == com.wecasino.proto.recorder.FetchGameProvideRequest.getDefaultInstance()) return this;
-      if (!other.getPlatform().isEmpty()) {
-        platform_ = other.platform_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
+    public Builder mergeFrom(com.wecasino.proto.recorder.GetCurrentRecordRequest other) {
+      if (other == com.wecasino.proto.recorder.GetCurrentRecordRequest.getDefaultInstance()) return this;
       if (!other.getGameCode().isEmpty()) {
         gameCode_ = other.gameCode_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -413,15 +362,10 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              platform_ = input.readStringRequireUtf8();
+              gameCode_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 18: {
-              gameCode_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -439,81 +383,13 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object platform_ = "";
-    /**
-     * <code>string platform = 1 [json_name = "platform"];</code>
-     * @return The platform.
-     */
-    public java.lang.String getPlatform() {
-      java.lang.Object ref = platform_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        platform_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string platform = 1 [json_name = "platform"];</code>
-     * @return The bytes for platform.
-     */
-    public com.google.protobuf.ByteString
-        getPlatformBytes() {
-      java.lang.Object ref = platform_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        platform_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string platform = 1 [json_name = "platform"];</code>
-     * @param value The platform to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPlatform(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      platform_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string platform = 1 [json_name = "platform"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearPlatform() {
-      platform_ = getDefaultInstance().getPlatform();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string platform = 1 [json_name = "platform"];</code>
-     * @param value The bytes for platform to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPlatformBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      platform_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object gameCode_ = "";
     /**
-     * <code>string game_code = 2 [json_name = "gameCode"];</code>
+     * <pre>
+     * 遊戲代碼
+     * </pre>
+     *
+     * <code>string game_code = 1 [json_name = "gameCode", (.google.api.field_behavior) = REQUIRED];</code>
      * @return The gameCode.
      */
     public java.lang.String getGameCode() {
@@ -529,7 +405,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string game_code = 2 [json_name = "gameCode"];</code>
+     * <pre>
+     * 遊戲代碼
+     * </pre>
+     *
+     * <code>string game_code = 1 [json_name = "gameCode", (.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for gameCode.
      */
     public com.google.protobuf.ByteString
@@ -546,7 +426,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string game_code = 2 [json_name = "gameCode"];</code>
+     * <pre>
+     * 遊戲代碼
+     * </pre>
+     *
+     * <code>string game_code = 1 [json_name = "gameCode", (.google.api.field_behavior) = REQUIRED];</code>
      * @param value The gameCode to set.
      * @return This builder for chaining.
      */
@@ -554,22 +438,30 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       gameCode_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>string game_code = 2 [json_name = "gameCode"];</code>
+     * <pre>
+     * 遊戲代碼
+     * </pre>
+     *
+     * <code>string game_code = 1 [json_name = "gameCode", (.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearGameCode() {
       gameCode_ = getDefaultInstance().getGameCode();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
     /**
-     * <code>string game_code = 2 [json_name = "gameCode"];</code>
+     * <pre>
+     * 遊戲代碼
+     * </pre>
+     *
+     * <code>string game_code = 1 [json_name = "gameCode", (.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for gameCode to set.
      * @return This builder for chaining.
      */
@@ -578,28 +470,28 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       gameCode_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
-    // @@protoc_insertion_point(builder_scope:recorder.FetchGameProvideRequest)
+    // @@protoc_insertion_point(builder_scope:recorder.GetCurrentRecordRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:recorder.FetchGameProvideRequest)
-  private static final com.wecasino.proto.recorder.FetchGameProvideRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:recorder.GetCurrentRecordRequest)
+  private static final com.wecasino.proto.recorder.GetCurrentRecordRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.wecasino.proto.recorder.FetchGameProvideRequest();
+    DEFAULT_INSTANCE = new com.wecasino.proto.recorder.GetCurrentRecordRequest();
   }
 
-  public static com.wecasino.proto.recorder.FetchGameProvideRequest getDefaultInstance() {
+  public static com.wecasino.proto.recorder.GetCurrentRecordRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FetchGameProvideRequest>
-      PARSER = new com.google.protobuf.AbstractParser<FetchGameProvideRequest>() {
+  private static final com.google.protobuf.Parser<GetCurrentRecordRequest>
+      PARSER = new com.google.protobuf.AbstractParser<GetCurrentRecordRequest>() {
     @java.lang.Override
-    public FetchGameProvideRequest parsePartialFrom(
+    public GetCurrentRecordRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -618,17 +510,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<FetchGameProvideRequest> parser() {
+  public static com.google.protobuf.Parser<GetCurrentRecordRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FetchGameProvideRequest> getParserForType() {
+  public com.google.protobuf.Parser<GetCurrentRecordRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.wecasino.proto.recorder.FetchGameProvideRequest getDefaultInstanceForType() {
+  public com.wecasino.proto.recorder.GetCurrentRecordRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

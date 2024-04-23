@@ -49,6 +49,10 @@ private static final long serialVersionUID = 0L;
     switch (number) {
       case 13:
         return internalGetTags();
+      case 25:
+        return internalGetPlayers();
+      case 30:
+        return internalGetPlayersName();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -649,6 +653,196 @@ java.lang.String defaultValue) {
     return tsStart_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : tsStart_;
   }
 
+  public static final int PLAYERS_FIELD_NUMBER = 25;
+  private static final class PlayersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.Integer, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.Integer, java.lang.String>newDefaultInstance(
+                com.wecasino.proto.recorder.RecorderProto.internal_static_recorder_RecordRoundStartedRequest_PlayersEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.INT32,
+                0,
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.Integer, java.lang.String> players_;
+  private com.google.protobuf.MapField<java.lang.Integer, java.lang.String>
+  internalGetPlayers() {
+    if (players_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          PlayersDefaultEntryHolder.defaultEntry);
+    }
+    return players_;
+  }
+  public int getPlayersCount() {
+    return internalGetPlayers().getMap().size();
+  }
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  @java.lang.Override
+  public boolean containsPlayers(
+      int key) {
+
+    return internalGetPlayers().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getPlayersMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.Integer, java.lang.String> getPlayers() {
+    return getPlayersMap();
+  }
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.Integer, java.lang.String> getPlayersMap() {
+    return internalGetPlayers().getMap();
+  }
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getPlayersOrDefault(
+      int key,
+      /* nullable */
+java.lang.String defaultValue) {
+
+    java.util.Map<java.lang.Integer, java.lang.String> map =
+        internalGetPlayers().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * 玩家入座
+   * </pre>
+   *
+   * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getPlayersOrThrow(
+      int key) {
+
+    java.util.Map<java.lang.Integer, java.lang.String> map =
+        internalGetPlayers().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int PLAYERS_NAME_FIELD_NUMBER = 30;
+  private static final class PlayersNameDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.wecasino.proto.recorder.RecorderProto.internal_static_recorder_RecordRoundStartedRequest_PlayersNameEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> playersName_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetPlayersName() {
+    if (playersName_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          PlayersNameDefaultEntryHolder.defaultEntry);
+    }
+    return playersName_;
+  }
+  public int getPlayersNameCount() {
+    return internalGetPlayersName().getMap().size();
+  }
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  @java.lang.Override
+  public boolean containsPlayersName(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetPlayersName().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getPlayersNameMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getPlayersName() {
+    return getPlayersNameMap();
+  }
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getPlayersNameMap() {
+    return internalGetPlayersName().getMap();
+  }
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getPlayersNameOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetPlayersName().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getPlayersNameOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetPlayersName().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -705,6 +899,18 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(16, getTsStart());
     }
+    com.google.protobuf.GeneratedMessage
+      .serializeIntegerMapTo(
+        output,
+        internalGetPlayers(),
+        PlayersDefaultEntryHolder.defaultEntry,
+        25);
+    com.google.protobuf.GeneratedMessage
+      .serializeStringMapTo(
+        output,
+        internalGetPlayersName(),
+        PlayersNameDefaultEntryHolder.defaultEntry,
+        30);
     getUnknownFields().writeTo(output);
   }
 
@@ -763,6 +969,26 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(16, getTsStart());
     }
+    for (java.util.Map.Entry<java.lang.Integer, java.lang.String> entry
+         : internalGetPlayers().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.Integer, java.lang.String>
+      players__ = PlayersDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(25, players__);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetPlayersName().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      playersName__ = PlayersNameDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(30, playersName__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -807,6 +1033,10 @@ java.lang.String defaultValue) {
       if (!getTsStart()
           .equals(other.getTsStart())) return false;
     }
+    if (!internalGetPlayers().equals(
+        other.internalGetPlayers())) return false;
+    if (!internalGetPlayersName().equals(
+        other.internalGetPlayersName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -849,6 +1079,14 @@ java.lang.String defaultValue) {
     if (hasTsStart()) {
       hash = (37 * hash) + TS_START_FIELD_NUMBER;
       hash = (53 * hash) + getTsStart().hashCode();
+    }
+    if (!internalGetPlayers().getMap().isEmpty()) {
+      hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetPlayers().hashCode();
+    }
+    if (!internalGetPlayersName().getMap().isEmpty()) {
+      hash = (37 * hash) + PLAYERS_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetPlayersName().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -965,6 +1203,10 @@ java.lang.String defaultValue) {
       switch (number) {
         case 13:
           return internalGetTags();
+        case 25:
+          return internalGetPlayers();
+        case 30:
+          return internalGetPlayersName();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -976,6 +1218,10 @@ java.lang.String defaultValue) {
       switch (number) {
         case 13:
           return internalGetMutableTags();
+        case 25:
+          return internalGetMutablePlayers();
+        case 30:
+          return internalGetMutablePlayersName();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1026,6 +1272,8 @@ java.lang.String defaultValue) {
         tsStartBuilder_.dispose();
         tsStartBuilder_ = null;
       }
+      internalGetMutablePlayers().clear();
+      internalGetMutablePlayersName().clear();
       return this;
     }
 
@@ -1103,6 +1351,14 @@ java.lang.String defaultValue) {
             : tsStartBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.players_ = internalGetPlayers();
+        result.players_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.playersName_ = internalGetPlayersName();
+        result.playersName_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1175,6 +1431,12 @@ java.lang.String defaultValue) {
       if (other.hasTsStart()) {
         mergeTsStart(other.getTsStart());
       }
+      internalGetMutablePlayers().mergeFrom(
+          other.internalGetPlayers());
+      bitField0_ |= 0x00002000;
+      internalGetMutablePlayersName().mergeFrom(
+          other.internalGetPlayersName());
+      bitField0_ |= 0x00004000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1272,6 +1534,24 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00001000;
               break;
             } // case 130
+            case 202: {
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.String>
+              players__ = input.readMessage(
+                  PlayersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutablePlayers().getMutableMap().put(
+                  players__.getKey(), players__.getValue());
+              bitField0_ |= 0x00002000;
+              break;
+            } // case 202
+            case 242: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              playersName__ = input.readMessage(
+                  PlayersNameDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutablePlayersName().getMutableMap().put(
+                  playersName__.getKey(), playersName__.getValue());
+              bitField0_ |= 0x00004000;
+              break;
+            } // case 242
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2515,6 +2795,316 @@ java.lang.String defaultValue) {
         tsStart_ = null;
       }
       return tsStartBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.String> players_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.String>
+        internalGetPlayers() {
+      if (players_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PlayersDefaultEntryHolder.defaultEntry);
+      }
+      return players_;
+    }
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.String>
+        internalGetMutablePlayers() {
+      if (players_ == null) {
+        players_ = com.google.protobuf.MapField.newMapField(
+            PlayersDefaultEntryHolder.defaultEntry);
+      }
+      if (!players_.isMutable()) {
+        players_ = players_.copy();
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return players_;
+    }
+    public int getPlayersCount() {
+      return internalGetPlayers().getMap().size();
+    }
+    /**
+     * <pre>
+     * 玩家入座
+     * </pre>
+     *
+     * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+     */
+    @java.lang.Override
+    public boolean containsPlayers(
+        int key) {
+
+      return internalGetPlayers().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getPlayersMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.String> getPlayers() {
+      return getPlayersMap();
+    }
+    /**
+     * <pre>
+     * 玩家入座
+     * </pre>
+     *
+     * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.Integer, java.lang.String> getPlayersMap() {
+      return internalGetPlayers().getMap();
+    }
+    /**
+     * <pre>
+     * 玩家入座
+     * </pre>
+     *
+     * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getPlayersOrDefault(
+        int key,
+        /* nullable */
+java.lang.String defaultValue) {
+
+      java.util.Map<java.lang.Integer, java.lang.String> map =
+          internalGetPlayers().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * 玩家入座
+     * </pre>
+     *
+     * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getPlayersOrThrow(
+        int key) {
+
+      java.util.Map<java.lang.Integer, java.lang.String> map =
+          internalGetPlayers().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearPlayers() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      internalGetMutablePlayers().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * 玩家入座
+     * </pre>
+     *
+     * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+     */
+    public Builder removePlayers(
+        int key) {
+
+      internalGetMutablePlayers().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.String>
+        getMutablePlayers() {
+      bitField0_ |= 0x00002000;
+      return internalGetMutablePlayers().getMutableMap();
+    }
+    /**
+     * <pre>
+     * 玩家入座
+     * </pre>
+     *
+     * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+     */
+    public Builder putPlayers(
+        int key,
+        java.lang.String value) {
+
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutablePlayers().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00002000;
+      return this;
+    }
+    /**
+     * <pre>
+     * 玩家入座
+     * </pre>
+     *
+     * <code>map&lt;int32, string&gt; players = 25 [json_name = "players"];</code>
+     */
+    public Builder putAllPlayers(
+        java.util.Map<java.lang.Integer, java.lang.String> values) {
+      internalGetMutablePlayers().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00002000;
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> playersName_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetPlayersName() {
+      if (playersName_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PlayersNameDefaultEntryHolder.defaultEntry);
+      }
+      return playersName_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutablePlayersName() {
+      if (playersName_ == null) {
+        playersName_ = com.google.protobuf.MapField.newMapField(
+            PlayersNameDefaultEntryHolder.defaultEntry);
+      }
+      if (!playersName_.isMutable()) {
+        playersName_ = playersName_.copy();
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return playersName_;
+    }
+    public int getPlayersNameCount() {
+      return internalGetPlayersName().getMap().size();
+    }
+    /**
+     * <pre>
+     * 玩家姓名
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+     */
+    @java.lang.Override
+    public boolean containsPlayersName(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetPlayersName().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getPlayersNameMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getPlayersName() {
+      return getPlayersNameMap();
+    }
+    /**
+     * <pre>
+     * 玩家姓名
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getPlayersNameMap() {
+      return internalGetPlayersName().getMap();
+    }
+    /**
+     * <pre>
+     * 玩家姓名
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getPlayersNameOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPlayersName().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * 玩家姓名
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getPlayersNameOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetPlayersName().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearPlayersName() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      internalGetMutablePlayersName().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * 玩家姓名
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+     */
+    public Builder removePlayersName(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutablePlayersName().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutablePlayersName() {
+      bitField0_ |= 0x00004000;
+      return internalGetMutablePlayersName().getMutableMap();
+    }
+    /**
+     * <pre>
+     * 玩家姓名
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+     */
+    public Builder putPlayersName(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutablePlayersName().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+    /**
+     * <pre>
+     * 玩家姓名
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+     */
+    public Builder putAllPlayersName(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutablePlayersName().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00004000;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:recorder.RecordRoundStartedRequest)

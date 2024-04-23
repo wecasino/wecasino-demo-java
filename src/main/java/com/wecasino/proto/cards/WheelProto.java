@@ -37,10 +37,9 @@ public final class WheelProto {
       "WHEEL_UNSPECIFIED\020\000\022\r\n\tWHEEL24X1\020\001\022\r\n\tWH" +
       "EEL12X3\020\002\022\014\n\010WHEEL8X5\020\003\022\r\n\tWHEEL4X10\020\004\022\r" +
       "\n\tWHEEL2X20\020\005\022\r\n\tWHEELAX45\020\006\022\r\n\tWHEELBX4" +
-      "5\020\007B\211\001\n\030com.wecasino.proto.cardsB\nWheelP" +
-      "rotoP\001Z-github.com/wecasino/wecasino-pro" +
-      "to/pbgo/cards\242\002\003CXX\252\002\005Cards\312\002\005Cards\342\002\021Ca" +
-      "rds\\GPBMetadata\352\002\005Cardsb\006proto3"
+      "5\020\007BZ\n\030com.wecasino.proto.cardsB\nWheelPr" +
+      "otoP\001\242\002\003CXX\252\002\005Cards\312\002\005Cards\342\002\021Cards\\GPBM" +
+      "etadata\352\002\005Cardsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

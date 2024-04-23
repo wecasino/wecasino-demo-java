@@ -4,13 +4,13 @@
 // Protobuf Java Version: 4.26.1
 package com.wecasino.proto.recorder;
 
-public interface FetchGameProvideListResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:recorder.FetchGameProvideListResponse)
+public interface ListGamesResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:recorder.ListGamesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <pre>
-   * 桌列表
+   * 遊戲列表
    * </pre>
    *
    * <code>repeated .recorder.GameProvide game_provides = 1 [json_name = "gameProvides"];</code>
@@ -19,7 +19,7 @@ public interface FetchGameProvideListResponseOrBuilder extends
       getGameProvidesList();
   /**
    * <pre>
-   * 桌列表
+   * 遊戲列表
    * </pre>
    *
    * <code>repeated .recorder.GameProvide game_provides = 1 [json_name = "gameProvides"];</code>
@@ -27,7 +27,7 @@ public interface FetchGameProvideListResponseOrBuilder extends
   com.wecasino.proto.recorder.GameProvide getGameProvides(int index);
   /**
    * <pre>
-   * 桌列表
+   * 遊戲列表
    * </pre>
    *
    * <code>repeated .recorder.GameProvide game_provides = 1 [json_name = "gameProvides"];</code>
@@ -35,7 +35,7 @@ public interface FetchGameProvideListResponseOrBuilder extends
   int getGameProvidesCount();
   /**
    * <pre>
-   * 桌列表
+   * 遊戲列表
    * </pre>
    *
    * <code>repeated .recorder.GameProvide game_provides = 1 [json_name = "gameProvides"];</code>
@@ -44,7 +44,7 @@ public interface FetchGameProvideListResponseOrBuilder extends
       getGameProvidesOrBuilderList();
   /**
    * <pre>
-   * 桌列表
+   * 遊戲列表
    * </pre>
    *
    * <code>repeated .recorder.GameProvide game_provides = 1 [json_name = "gameProvides"];</code>

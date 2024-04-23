@@ -217,6 +217,60 @@ java.lang.String defaultValue);
 
   /**
    * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  int getPlayersNameCount();
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  boolean containsPlayersName(
+      java.lang.String key);
+  /**
+   * Use {@link #getPlayersNameMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getPlayersName();
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getPlayersNameMap();
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  /* nullable */
+java.lang.String getPlayersNameOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * 玩家姓名
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName"];</code>
+   */
+  java.lang.String getPlayersNameOrThrow(
+      java.lang.String key);
+
+  /**
+   * <pre>
    * 附加媒體：key: 媒體資源代碼；value: 媒體內容。
    * </pre>
    *

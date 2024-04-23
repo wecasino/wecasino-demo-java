@@ -6,37 +6,69 @@ package com.wecasino.proto.games.bullfight;
 
 /**
  * <pre>
- * 結果紀錄類型代碼
+ * 豹子 &gt; 同花順 &gt; 同花 &gt; 順子 &gt; 對子 &gt; 散牌
  * </pre>
  *
- * Protobuf enum {@code games.bullfight.ResultRecordType}
+ * Protobuf enum {@code games.bullfight.CardPattern}
  */
-public enum ResultRecordType
+public enum CardPattern
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
    * 未指定
    * </pre>
    *
-   * <code>RESULT_RECORD_TYPE_UNSPECIFIED = 0;</code>
+   * <code>CARD_PATTERN_UNSPECIFIED = 0;</code>
    */
-  RESULT_RECORD_TYPE_UNSPECIFIED(0),
+  CARD_PATTERN_UNSPECIFIED(0),
   /**
    * <pre>
-   * 遊戲局結束
+   * 高牌
    * </pre>
    *
-   * <code>ROUND_FINISH = 1;</code>
+   * <code>HIGH = 1;</code>
    */
-  ROUND_FINISH(1),
+  HIGH(1),
   /**
    * <pre>
-   * Pitboss 修正
+   * 有牛
    * </pre>
    *
-   * <code>PITBOSS_MODIFY_RESULT = 2;</code>
+   * <code>BULL = 2;</code>
    */
-  PITBOSS_MODIFY_RESULT(2),
+  BULL(2),
+  /**
+   * <pre>
+   * 牛牛
+   * </pre>
+   *
+   * <code>BULL_BULL = 3;</code>
+   */
+  BULL_BULL(3),
+  /**
+   * <pre>
+   * 四花
+   * </pre>
+   *
+   * <code>FOUR_FACE = 4;</code>
+   */
+  FOUR_FACE(4),
+  /**
+   * <pre>
+   * 五花
+   * </pre>
+   *
+   * <code>FULL_FACE = 5;</code>
+   */
+  FULL_FACE(5),
+  /**
+   * <pre>
+   * 五小
+   * </pre>
+   *
+   * <code>FULL_SMALL = 6;</code>
+   */
+  FULL_SMALL(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -47,32 +79,64 @@ public enum ResultRecordType
       /* minor= */ 26,
       /* patch= */ 1,
       /* suffix= */ "",
-      ResultRecordType.class.getName());
+      CardPattern.class.getName());
   }
   /**
    * <pre>
    * 未指定
    * </pre>
    *
-   * <code>RESULT_RECORD_TYPE_UNSPECIFIED = 0;</code>
+   * <code>CARD_PATTERN_UNSPECIFIED = 0;</code>
    */
-  public static final int RESULT_RECORD_TYPE_UNSPECIFIED_VALUE = 0;
+  public static final int CARD_PATTERN_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
-   * 遊戲局結束
+   * 高牌
    * </pre>
    *
-   * <code>ROUND_FINISH = 1;</code>
+   * <code>HIGH = 1;</code>
    */
-  public static final int ROUND_FINISH_VALUE = 1;
+  public static final int HIGH_VALUE = 1;
   /**
    * <pre>
-   * Pitboss 修正
+   * 有牛
    * </pre>
    *
-   * <code>PITBOSS_MODIFY_RESULT = 2;</code>
+   * <code>BULL = 2;</code>
    */
-  public static final int PITBOSS_MODIFY_RESULT_VALUE = 2;
+  public static final int BULL_VALUE = 2;
+  /**
+   * <pre>
+   * 牛牛
+   * </pre>
+   *
+   * <code>BULL_BULL = 3;</code>
+   */
+  public static final int BULL_BULL_VALUE = 3;
+  /**
+   * <pre>
+   * 四花
+   * </pre>
+   *
+   * <code>FOUR_FACE = 4;</code>
+   */
+  public static final int FOUR_FACE_VALUE = 4;
+  /**
+   * <pre>
+   * 五花
+   * </pre>
+   *
+   * <code>FULL_FACE = 5;</code>
+   */
+  public static final int FULL_FACE_VALUE = 5;
+  /**
+   * <pre>
+   * 五小
+   * </pre>
+   *
+   * <code>FULL_SMALL = 6;</code>
+   */
+  public static final int FULL_SMALL_VALUE = 6;
 
 
   public final int getNumber() {
@@ -89,7 +153,7 @@ public enum ResultRecordType
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static ResultRecordType valueOf(int value) {
+  public static CardPattern valueOf(int value) {
     return forNumber(value);
   }
 
@@ -97,24 +161,28 @@ public enum ResultRecordType
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static ResultRecordType forNumber(int value) {
+  public static CardPattern forNumber(int value) {
     switch (value) {
-      case 0: return RESULT_RECORD_TYPE_UNSPECIFIED;
-      case 1: return ROUND_FINISH;
-      case 2: return PITBOSS_MODIFY_RESULT;
+      case 0: return CARD_PATTERN_UNSPECIFIED;
+      case 1: return HIGH;
+      case 2: return BULL;
+      case 3: return BULL_BULL;
+      case 4: return FOUR_FACE;
+      case 5: return FULL_FACE;
+      case 6: return FULL_SMALL;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ResultRecordType>
+  public static com.google.protobuf.Internal.EnumLiteMap<CardPattern>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      ResultRecordType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ResultRecordType>() {
-          public ResultRecordType findValueByNumber(int number) {
-            return ResultRecordType.forNumber(number);
+      CardPattern> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CardPattern>() {
+          public CardPattern findValueByNumber(int number) {
+            return CardPattern.forNumber(number);
           }
         };
 
@@ -135,9 +203,9 @@ public enum ResultRecordType
     return com.wecasino.proto.games.bullfight.RecordProto.getDescriptor().getEnumTypes().get(3);
   }
 
-  private static final ResultRecordType[] VALUES = values();
+  private static final CardPattern[] VALUES = values();
 
-  public static ResultRecordType valueOf(
+  public static CardPattern valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -151,10 +219,10 @@ public enum ResultRecordType
 
   private final int value;
 
-  private ResultRecordType(int value) {
+  private CardPattern(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:games.bullfight.ResultRecordType)
+  // @@protoc_insertion_point(enum_scope:games.bullfight.CardPattern)
 }
 

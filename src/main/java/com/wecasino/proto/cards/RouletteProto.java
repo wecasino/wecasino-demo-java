@@ -50,11 +50,9 @@ public final class RouletteProto {
       "ROULETTE_29\020\035\022\017\n\013ROULETTE_30\020\036\022\017\n\013ROULET" +
       "TE_31\020\037\022\017\n\013ROULETTE_32\020 \022\017\n\013ROULETTE_33\020" +
       "!\022\017\n\013ROULETTE_34\020\"\022\017\n\013ROULETTE_35\020#\022\017\n\013R" +
-      "OULETTE_36\020$B\214\001\n\030com.wecasino.proto.card" +
-      "sB\rRouletteProtoP\001Z-github.com/wecasino/" +
-      "wecasino-proto/pbgo/cards\242\002\003CXX\252\002\005Cards\312" +
-      "\002\005Cards\342\002\021Cards\\GPBMetadata\352\002\005Cardsb\006pro" +
-      "to3"
+      "OULETTE_36\020$B]\n\030com.wecasino.proto.cards" +
+      "B\rRouletteProtoP\001\242\002\003CXX\252\002\005Cards\312\002\005Cards\342" +
+      "\002\021Cards\\GPBMetadata\352\002\005Cardsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

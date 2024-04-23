@@ -146,63 +146,6 @@ com.wecasino.proto.recorder.CardList defaultValue);
 
   /**
    * <pre>
-   * 目標分數資源
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 7 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  int getScoresCount();
-  /**
-   * <pre>
-   * 目標分數資源
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 7 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  boolean containsScores(
-      int key);
-  /**
-   * Use {@link #getScoresMap()} instead.
-   */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.Integer, java.lang.Long>
-  getScores();
-  /**
-   * <pre>
-   * 目標分數資源
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 7 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  java.util.Map<java.lang.Integer, java.lang.Long>
-  getScoresMap();
-  /**
-   * <pre>
-   * 目標分數資源
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 7 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  long getScoresOrDefault(
-      int key,
-      long defaultValue);
-  /**
-   * <pre>
-   * 目標分數資源
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 7 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  long getScoresOrThrow(
-      int key);
-
-  /**
-   * <pre>
    * （可選）附加資料
    * </pre>
    *

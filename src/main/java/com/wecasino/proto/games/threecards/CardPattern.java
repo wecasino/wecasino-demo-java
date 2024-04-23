@@ -9,66 +9,74 @@ package com.wecasino.proto.games.threecards;
  * 豹子 &gt; 同花順 &gt; 同花 &gt; 順子 &gt; 對子 &gt; 散牌
  * </pre>
  *
- * Protobuf enum {@code games.threecards.CardStyle}
+ * Protobuf enum {@code games.threecards.CardPattern}
  */
-public enum CardStyle
+public enum CardPattern
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
-   * 散牌
+   * 未指定
    * </pre>
    *
-   * <code>NONE = 0;</code>
+   * <code>CARD_PATTERN_UNSPECIFIED = 0;</code>
    */
-  NONE(0),
+  CARD_PATTERN_UNSPECIFIED(0),
+  /**
+   * <pre>
+   * 高牌
+   * </pre>
+   *
+   * <code>HIGH = 1;</code>
+   */
+  HIGH(1),
   /**
    * <pre>
    * 對子
    * </pre>
    *
-   * <code>PAIR = 1;</code>
+   * <code>PAIR = 2;</code>
    */
-  PAIR(1),
+  PAIR(2),
   /**
    * <pre>
    * 順子
    * </pre>
    *
-   * <code>STRAIGHT = 2;</code>
+   * <code>STRAIGHT = 3;</code>
    */
-  STRAIGHT(2),
+  STRAIGHT(3),
   /**
    * <pre>
-   * 同花
+   * 金花
    * </pre>
    *
-   * <code>FLUSH = 3;</code>
+   * <code>FLUSH = 4;</code>
    */
-  FLUSH(3),
+  FLUSH(4),
   /**
    * <pre>
-   * 順子
+   * 順金
    * </pre>
    *
-   * <code>STRAIGHTF = 4;</code>
+   * <code>STRAIGHT_FLUSH = 5;</code>
    */
-  STRAIGHTF(4),
+  STRAIGHT_FLUSH(5),
   /**
    * <pre>
    * 豹子
    * </pre>
    *
-   * <code>LEOPARD = 5;</code>
+   * <code>LEOPARD = 6;</code>
    */
-  LEOPARD(5),
+  LEOPARD(6),
   /**
    * <pre>
    * 豹子殺手
    * </pre>
    *
-   * <code>LEOPARD_KILLER = 6;</code>
+   * <code>LEOPARD_KILLER = 7;</code>
    */
-  LEOPARD_KILLER(6),
+  LEOPARD_KILLER(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -79,64 +87,72 @@ public enum CardStyle
       /* minor= */ 26,
       /* patch= */ 1,
       /* suffix= */ "",
-      CardStyle.class.getName());
+      CardPattern.class.getName());
   }
   /**
    * <pre>
-   * 散牌
+   * 未指定
    * </pre>
    *
-   * <code>NONE = 0;</code>
+   * <code>CARD_PATTERN_UNSPECIFIED = 0;</code>
    */
-  public static final int NONE_VALUE = 0;
+  public static final int CARD_PATTERN_UNSPECIFIED_VALUE = 0;
+  /**
+   * <pre>
+   * 高牌
+   * </pre>
+   *
+   * <code>HIGH = 1;</code>
+   */
+  public static final int HIGH_VALUE = 1;
   /**
    * <pre>
    * 對子
    * </pre>
    *
-   * <code>PAIR = 1;</code>
+   * <code>PAIR = 2;</code>
    */
-  public static final int PAIR_VALUE = 1;
+  public static final int PAIR_VALUE = 2;
   /**
    * <pre>
    * 順子
    * </pre>
    *
-   * <code>STRAIGHT = 2;</code>
+   * <code>STRAIGHT = 3;</code>
    */
-  public static final int STRAIGHT_VALUE = 2;
+  public static final int STRAIGHT_VALUE = 3;
   /**
    * <pre>
-   * 同花
+   * 金花
    * </pre>
    *
-   * <code>FLUSH = 3;</code>
+   * <code>FLUSH = 4;</code>
    */
-  public static final int FLUSH_VALUE = 3;
+  public static final int FLUSH_VALUE = 4;
   /**
    * <pre>
-   * 順子
+   * 順金
    * </pre>
    *
-   * <code>STRAIGHTF = 4;</code>
+   * <code>STRAIGHT_FLUSH = 5;</code>
    */
-  public static final int STRAIGHTF_VALUE = 4;
+  public static final int STRAIGHT_FLUSH_VALUE = 5;
   /**
    * <pre>
    * 豹子
    * </pre>
    *
-   * <code>LEOPARD = 5;</code>
+   * <code>LEOPARD = 6;</code>
    */
-  public static final int LEOPARD_VALUE = 5;
+  public static final int LEOPARD_VALUE = 6;
   /**
    * <pre>
    * 豹子殺手
    * </pre>
    *
-   * <code>LEOPARD_KILLER = 6;</code>
+   * <code>LEOPARD_KILLER = 7;</code>
    */
-  public static final int LEOPARD_KILLER_VALUE = 6;
+  public static final int LEOPARD_KILLER_VALUE = 7;
 
 
   public final int getNumber() {
@@ -153,7 +169,7 @@ public enum CardStyle
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static CardStyle valueOf(int value) {
+  public static CardPattern valueOf(int value) {
     return forNumber(value);
   }
 
@@ -161,28 +177,29 @@ public enum CardStyle
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static CardStyle forNumber(int value) {
+  public static CardPattern forNumber(int value) {
     switch (value) {
-      case 0: return NONE;
-      case 1: return PAIR;
-      case 2: return STRAIGHT;
-      case 3: return FLUSH;
-      case 4: return STRAIGHTF;
-      case 5: return LEOPARD;
-      case 6: return LEOPARD_KILLER;
+      case 0: return CARD_PATTERN_UNSPECIFIED;
+      case 1: return HIGH;
+      case 2: return PAIR;
+      case 3: return STRAIGHT;
+      case 4: return FLUSH;
+      case 5: return STRAIGHT_FLUSH;
+      case 6: return LEOPARD;
+      case 7: return LEOPARD_KILLER;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<CardStyle>
+  public static com.google.protobuf.Internal.EnumLiteMap<CardPattern>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      CardStyle> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<CardStyle>() {
-          public CardStyle findValueByNumber(int number) {
-            return CardStyle.forNumber(number);
+      CardPattern> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CardPattern>() {
+          public CardPattern findValueByNumber(int number) {
+            return CardPattern.forNumber(number);
           }
         };
 
@@ -200,12 +217,12 @@ public enum CardStyle
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.wecasino.proto.games.threecards.RecordProto.getDescriptor().getEnumTypes().get(3);
+    return com.wecasino.proto.games.threecards.RecordProto.getDescriptor().getEnumTypes().get(2);
   }
 
-  private static final CardStyle[] VALUES = values();
+  private static final CardPattern[] VALUES = values();
 
-  public static CardStyle valueOf(
+  public static CardPattern valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -219,10 +236,10 @@ public enum CardStyle
 
   private final int value;
 
-  private CardStyle(int value) {
+  private CardPattern(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:games.threecards.CardStyle)
+  // @@protoc_insertion_point(enum_scope:games.threecards.CardPattern)
 }
 

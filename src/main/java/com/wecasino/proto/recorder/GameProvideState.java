@@ -5,6 +5,11 @@
 package com.wecasino.proto.recorder;
 
 /**
+ * <pre>
+ * GameProvideState
+ * 遊戲供應狀態類型
+ * </pre>
+ *
  * Protobuf enum {@code recorder.GameProvideState}
  */
 public enum GameProvideState

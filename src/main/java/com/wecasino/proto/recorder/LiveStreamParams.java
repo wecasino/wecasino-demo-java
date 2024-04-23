@@ -6,6 +6,7 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
+ * LiveStreamParams
  * 直播資訊
  * </pre>
  *
@@ -367,6 +368,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * LiveStreamParams
    * 直播資訊
    * </pre>
    *

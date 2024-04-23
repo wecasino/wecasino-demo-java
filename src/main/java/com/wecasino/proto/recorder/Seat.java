@@ -6,6 +6,7 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
+ * Seat
  * 座位
  * </pre>
  *
@@ -44,8 +45,6 @@ private static final long serialVersionUID = 0L;
     switch (number) {
       case 3:
         return internalGetCards();
-      case 4:
-        return internalGetScores();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -173,103 +172,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
     return map.get(key);
   }
 
-  public static final int SCORES_FIELD_NUMBER = 4;
-  private static final class ScoresDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.Integer, java.lang.Long> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.Integer, java.lang.Long>newDefaultInstance(
-                com.wecasino.proto.recorder.RecordProto.internal_static_recorder_Seat_ScoresEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.INT32,
-                0,
-                com.google.protobuf.WireFormat.FieldType.INT64,
-                0L);
-  }
-  @SuppressWarnings("serial")
-  private com.google.protobuf.MapField<
-      java.lang.Integer, java.lang.Long> scores_;
-  private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
-  internalGetScores() {
-    if (scores_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          ScoresDefaultEntryHolder.defaultEntry);
-    }
-    return scores_;
-  }
-  public int getScoresCount() {
-    return internalGetScores().getMap().size();
-  }
-  /**
-   * <pre>
-   * 各類分數
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  @java.lang.Override
-  public boolean containsScores(
-      int key) {
-
-    return internalGetScores().getMap().containsKey(key);
-  }
-  /**
-   * Use {@link #getScoresMap()} instead.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.Map<java.lang.Integer, java.lang.Long> getScores() {
-    return getScoresMap();
-  }
-  /**
-   * <pre>
-   * 各類分數
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  @java.lang.Override
-  public java.util.Map<java.lang.Integer, java.lang.Long> getScoresMap() {
-    return internalGetScores().getMap();
-  }
-  /**
-   * <pre>
-   * 各類分數
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  @java.lang.Override
-  public long getScoresOrDefault(
-      int key,
-      long defaultValue) {
-
-    java.util.Map<java.lang.Integer, java.lang.Long> map =
-        internalGetScores().getMap();
-    return map.containsKey(key) ? map.get(key) : defaultValue;
-  }
-  /**
-   * <pre>
-   * 各類分數
-   * key: ResourceTypeCode, value: 分數值。
-   * </pre>
-   *
-   * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-   */
-  @java.lang.Override
-  public long getScoresOrThrow(
-      int key) {
-
-    java.util.Map<java.lang.Integer, java.lang.Long> map =
-        internalGetScores().getMap();
-    if (!map.containsKey(key)) {
-      throw new java.lang.IllegalArgumentException();
-    }
-    return map.get(key);
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -293,12 +195,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
         internalGetCards(),
         CardsDefaultEntryHolder.defaultEntry,
         3);
-    com.google.protobuf.GeneratedMessage
-      .serializeIntegerMapTo(
-        output,
-        internalGetScores(),
-        ScoresDefaultEntryHolder.defaultEntry,
-        4);
     getUnknownFields().writeTo(output);
   }
 
@@ -322,16 +218,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, cards__);
     }
-    for (java.util.Map.Entry<java.lang.Integer, java.lang.Long> entry
-         : internalGetScores().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Long>
-      scores__ = ScoresDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, scores__);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -351,8 +237,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
         != other.getCode()) return false;
     if (!internalGetCards().equals(
         other.internalGetCards())) return false;
-    if (!internalGetScores().equals(
-        other.internalGetScores())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -369,10 +253,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
     if (!internalGetCards().getMap().isEmpty()) {
       hash = (37 * hash) + CARDS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetCards().hashCode();
-    }
-    if (!internalGetScores().getMap().isEmpty()) {
-      hash = (37 * hash) + SCORES_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetScores().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -473,6 +353,7 @@ com.wecasino.proto.recorder.CardList defaultValue) {
   }
   /**
    * <pre>
+   * Seat
    * 座位
    * </pre>
    *
@@ -493,8 +374,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
       switch (number) {
         case 3:
           return internalGetCards();
-        case 4:
-          return internalGetScores();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -506,8 +385,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
       switch (number) {
         case 3:
           return internalGetMutableCards();
-        case 4:
-          return internalGetMutableScores();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -537,7 +414,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
       bitField0_ = 0;
       code_ = 0;
       internalGetMutableCards().clear();
-      internalGetMutableScores().clear();
       return this;
     }
 
@@ -577,10 +453,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.cards_ = internalGetCards().build(CardsDefaultEntryHolder.defaultEntry);
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.scores_ = internalGetScores();
-        result.scores_.makeImmutable();
-      }
     }
 
     @java.lang.Override
@@ -601,9 +473,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
       internalGetMutableCards().mergeFrom(
           other.internalGetCards());
       bitField0_ |= 0x00000002;
-      internalGetMutableScores().mergeFrom(
-          other.internalGetScores());
-      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -644,15 +513,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
               bitField0_ |= 0x00000002;
               break;
             } // case 26
-            case 34: {
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Long>
-              scores__ = input.readMessage(
-                  ScoresDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableScores().getMutableMap().put(
-                  scores__.getKey(), scores__.getValue());
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -907,166 +767,6 @@ com.wecasino.proto.recorder.CardList defaultValue) {
         builderMap.put(key, entry);
       }
       return (com.wecasino.proto.recorder.CardList.Builder) entry;
-    }
-
-    private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Long> scores_;
-    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
-        internalGetScores() {
-      if (scores_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ScoresDefaultEntryHolder.defaultEntry);
-      }
-      return scores_;
-    }
-    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Long>
-        internalGetMutableScores() {
-      if (scores_ == null) {
-        scores_ = com.google.protobuf.MapField.newMapField(
-            ScoresDefaultEntryHolder.defaultEntry);
-      }
-      if (!scores_.isMutable()) {
-        scores_ = scores_.copy();
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return scores_;
-    }
-    public int getScoresCount() {
-      return internalGetScores().getMap().size();
-    }
-    /**
-     * <pre>
-     * 各類分數
-     * key: ResourceTypeCode, value: 分數值。
-     * </pre>
-     *
-     * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-     */
-    @java.lang.Override
-    public boolean containsScores(
-        int key) {
-
-      return internalGetScores().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getScoresMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Long> getScores() {
-      return getScoresMap();
-    }
-    /**
-     * <pre>
-     * 各類分數
-     * key: ResourceTypeCode, value: 分數值。
-     * </pre>
-     *
-     * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.Integer, java.lang.Long> getScoresMap() {
-      return internalGetScores().getMap();
-    }
-    /**
-     * <pre>
-     * 各類分數
-     * key: ResourceTypeCode, value: 分數值。
-     * </pre>
-     *
-     * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-     */
-    @java.lang.Override
-    public long getScoresOrDefault(
-        int key,
-        long defaultValue) {
-
-      java.util.Map<java.lang.Integer, java.lang.Long> map =
-          internalGetScores().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <pre>
-     * 各類分數
-     * key: ResourceTypeCode, value: 分數值。
-     * </pre>
-     *
-     * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-     */
-    @java.lang.Override
-    public long getScoresOrThrow(
-        int key) {
-
-      java.util.Map<java.lang.Integer, java.lang.Long> map =
-          internalGetScores().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-    public Builder clearScores() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      internalGetMutableScores().getMutableMap()
-          .clear();
-      return this;
-    }
-    /**
-     * <pre>
-     * 各類分數
-     * key: ResourceTypeCode, value: 分數值。
-     * </pre>
-     *
-     * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-     */
-    public Builder removeScores(
-        int key) {
-
-      internalGetMutableScores().getMutableMap()
-          .remove(key);
-      return this;
-    }
-    /**
-     * Use alternate mutation accessors instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Long>
-        getMutableScores() {
-      bitField0_ |= 0x00000004;
-      return internalGetMutableScores().getMutableMap();
-    }
-    /**
-     * <pre>
-     * 各類分數
-     * key: ResourceTypeCode, value: 分數值。
-     * </pre>
-     *
-     * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-     */
-    public Builder putScores(
-        int key,
-        long value) {
-
-
-      internalGetMutableScores().getMutableMap()
-          .put(key, value);
-      bitField0_ |= 0x00000004;
-      return this;
-    }
-    /**
-     * <pre>
-     * 各類分數
-     * key: ResourceTypeCode, value: 分數值。
-     * </pre>
-     *
-     * <code>map&lt;int32, int64&gt; scores = 4 [json_name = "scores", (.tagger.tags) = "bson:&#92;"scores,omitempty&#92;""];</code>
-     */
-    public Builder putAllScores(
-        java.util.Map<java.lang.Integer, java.lang.Long> values) {
-      internalGetMutableScores().getMutableMap()
-          .putAll(values);
-      bitField0_ |= 0x00000004;
-      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:recorder.Seat)

@@ -59,15 +59,14 @@ public final class RecordProto {
       "FY_PLAYER_1\020*\022\033\n\027PITBOSS_MODIFY_PLAYER_2" +
       "\020+\022\033\n\027PITBOSS_MODIFY_PLAYER_3\020,*S\n\010GameS" +
       "eat\022\024\n\020SEAT_UNSPECIFIED\020\000\022\013\n\007PLAYER1\020\001\022\013" +
-      "\n\007PLAYER2\020\002\022\013\n\007PLAYER3\020\003\022\n\n\006BANKER\020\020*c\n\020" +
-      "ResultRecordType\022\"\n\036RESULT_RECORD_TYPE_U" +
-      "NSPECIFIED\020\000\022\020\n\014ROUND_FINISH\020\001\022\031\n\025PITBOS" +
-      "S_MODIFY_RESULT\020\002B\307\001\n\"com.wecasino.proto" +
-      ".games.bullfightB\013RecordProtoP\001Z7github." +
-      "com/wecasino/wecasino-proto/pbgo/games/b" +
-      "ullfight\242\002\003GBX\252\002\017Games.Bullfight\312\002\017Games" +
-      "\\Bullfight\342\002\033Games\\Bullfight\\GPBMetadata" +
-      "\352\002\020Games::Bullfightb\006proto3"
+      "\n\007PLAYER2\020\002\022\013\n\007PLAYER3\020\003\022\n\n\006BANKER\020\020*|\n\013" +
+      "CardPattern\022\034\n\030CARD_PATTERN_UNSPECIFIED\020" +
+      "\000\022\010\n\004HIGH\020\001\022\010\n\004BULL\020\002\022\r\n\tBULL_BULL\020\003\022\r\n\t" +
+      "FOUR_FACE\020\004\022\r\n\tFULL_FACE\020\005\022\016\n\nFULL_SMALL" +
+      "\020\006B\216\001\n\"com.wecasino.proto.games.bullfigh" +
+      "tB\013RecordProtoP\001\242\002\003GBX\252\002\017Games.Bullfight" +
+      "\312\002\017Games\\Bullfight\342\002\033Games\\Bullfight\\GPB" +
+      "Metadata\352\002\020Games::Bullfightb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

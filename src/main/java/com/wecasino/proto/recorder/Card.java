@@ -6,6 +6,7 @@ package com.wecasino.proto.recorder;
 
 /**
  * <pre>
+ * Card
  * 卡牌，代表在此局中使用的各類物品
  * </pre>
  *
@@ -633,6 +634,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Card
    * 卡牌，代表在此局中使用的各類物品
    * </pre>
    *

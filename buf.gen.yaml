@@ -1,0 +1,10 @@
+version: v1
+managed:
+  enabled: true
+  java_package_prefix:
+    except:
+      - buf.build/googleapis/googleapis
+    default: "com.wecasino.proto"
+plugins:
+  - plugin: buf.build/protocolbuffers/java
+    out: src/main/java

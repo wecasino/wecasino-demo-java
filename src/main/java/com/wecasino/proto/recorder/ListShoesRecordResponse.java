@@ -5,12 +5,17 @@
 package com.wecasino.proto.recorder;
 
 /**
- * Protobuf type {@code recorder.FetchShoeRecordResponse}
+ * <pre>
+ * ListShoesRecordResponse
+ * 取得靴記錄列表
+ * </pre>
+ *
+ * Protobuf type {@code recorder.ListShoesRecordResponse}
  */
-public final class FetchShoeRecordResponse extends
+public final class ListShoesRecordResponse extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:recorder.FetchShoeRecordResponse)
-    FetchShoeRecordResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:recorder.ListShoesRecordResponse)
+    ListShoesRecordResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -19,33 +24,39 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 26,
       /* patch= */ 1,
       /* suffix= */ "",
-      FetchShoeRecordResponse.class.getName());
+      ListShoesRecordResponse.class.getName());
   }
-  // Use FetchShoeRecordResponse.newBuilder() to construct.
-  private FetchShoeRecordResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use ListShoesRecordResponse.newBuilder() to construct.
+  private ListShoesRecordResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private FetchShoeRecordResponse() {
+  private ListShoesRecordResponse() {
     shoeRecord_ = java.util.Collections.emptyList();
+    searchAfter_ = "";
+    searchBefore_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchShoeRecordResponse_descriptor;
+    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListShoesRecordResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchShoeRecordResponse_fieldAccessorTable
+    return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListShoesRecordResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.wecasino.proto.recorder.FetchShoeRecordResponse.class, com.wecasino.proto.recorder.FetchShoeRecordResponse.Builder.class);
+            com.wecasino.proto.recorder.ListShoesRecordResponse.class, com.wecasino.proto.recorder.ListShoesRecordResponse.Builder.class);
   }
 
   public static final int SHOE_RECORD_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private java.util.List<com.wecasino.proto.recorder.ShoeRecord> shoeRecord_;
   /**
+   * <pre>
+   * shoes
+   * </pre>
+   *
    * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
    */
   @java.lang.Override
@@ -53,6 +64,10 @@ private static final long serialVersionUID = 0L;
     return shoeRecord_;
   }
   /**
+   * <pre>
+   * shoes
+   * </pre>
+   *
    * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
    */
   @java.lang.Override
@@ -61,6 +76,10 @@ private static final long serialVersionUID = 0L;
     return shoeRecord_;
   }
   /**
+   * <pre>
+   * shoes
+   * </pre>
+   *
    * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
    */
   @java.lang.Override
@@ -68,6 +87,10 @@ private static final long serialVersionUID = 0L;
     return shoeRecord_.size();
   }
   /**
+   * <pre>
+   * shoes
+   * </pre>
+   *
    * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
    */
   @java.lang.Override
@@ -75,12 +98,125 @@ private static final long serialVersionUID = 0L;
     return shoeRecord_.get(index);
   }
   /**
+   * <pre>
+   * shoes
+   * </pre>
+   *
    * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
    */
   @java.lang.Override
   public com.wecasino.proto.recorder.ShoeRecordOrBuilder getShoeRecordOrBuilder(
       int index) {
     return shoeRecord_.get(index);
+  }
+
+  public static final int TOTAL_FIELD_NUMBER = 2;
+  private long total_ = 0L;
+  /**
+   * <pre>
+   * 總數
+   * </pre>
+   *
+   * <code>int64 total = 2 [json_name = "total"];</code>
+   * @return The total.
+   */
+  @java.lang.Override
+  public long getTotal() {
+    return total_;
+  }
+
+  public static final int SEARCH_AFTER_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object searchAfter_ = "";
+  /**
+   * <pre>
+   * pagination next page
+   * </pre>
+   *
+   * <code>string search_after = 8 [json_name = "searchAfter"];</code>
+   * @return The searchAfter.
+   */
+  @java.lang.Override
+  public java.lang.String getSearchAfter() {
+    java.lang.Object ref = searchAfter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      searchAfter_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * pagination next page
+   * </pre>
+   *
+   * <code>string search_after = 8 [json_name = "searchAfter"];</code>
+   * @return The bytes for searchAfter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSearchAfterBytes() {
+    java.lang.Object ref = searchAfter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      searchAfter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SEARCH_BEFORE_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object searchBefore_ = "";
+  /**
+   * <pre>
+   * pagination previous page
+   * </pre>
+   *
+   * <code>string search_before = 9 [json_name = "searchBefore"];</code>
+   * @return The searchBefore.
+   */
+  @java.lang.Override
+  public java.lang.String getSearchBefore() {
+    java.lang.Object ref = searchBefore_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      searchBefore_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * pagination previous page
+   * </pre>
+   *
+   * <code>string search_before = 9 [json_name = "searchBefore"];</code>
+   * @return The bytes for searchBefore.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSearchBeforeBytes() {
+    java.lang.Object ref = searchBefore_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      searchBefore_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -100,6 +236,15 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < shoeRecord_.size(); i++) {
       output.writeMessage(1, shoeRecord_.get(i));
     }
+    if (total_ != 0L) {
+      output.writeInt64(2, total_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(searchAfter_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, searchAfter_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(searchBefore_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, searchBefore_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -113,6 +258,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, shoeRecord_.get(i));
     }
+    if (total_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, total_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(searchAfter_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, searchAfter_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(searchBefore_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, searchBefore_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -123,13 +278,19 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.wecasino.proto.recorder.FetchShoeRecordResponse)) {
+    if (!(obj instanceof com.wecasino.proto.recorder.ListShoesRecordResponse)) {
       return super.equals(obj);
     }
-    com.wecasino.proto.recorder.FetchShoeRecordResponse other = (com.wecasino.proto.recorder.FetchShoeRecordResponse) obj;
+    com.wecasino.proto.recorder.ListShoesRecordResponse other = (com.wecasino.proto.recorder.ListShoesRecordResponse) obj;
 
     if (!getShoeRecordList()
         .equals(other.getShoeRecordList())) return false;
+    if (getTotal()
+        != other.getTotal()) return false;
+    if (!getSearchAfter()
+        .equals(other.getSearchAfter())) return false;
+    if (!getSearchBefore()
+        .equals(other.getSearchBefore())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -145,49 +306,56 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SHOE_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + getShoeRecordList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getTotal());
+    hash = (37 * hash) + SEARCH_AFTER_FIELD_NUMBER;
+    hash = (53 * hash) + getSearchAfter().hashCode();
+    hash = (37 * hash) + SEARCH_BEFORE_FIELD_NUMBER;
+    hash = (53 * hash) + getSearchBefore().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(byte[] data)
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(java.io.InputStream input)
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -195,26 +363,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseDelimitedFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse parseFrom(
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -227,7 +395,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.wecasino.proto.recorder.FetchShoeRecordResponse prototype) {
+  public static Builder newBuilder(com.wecasino.proto.recorder.ListShoesRecordResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -243,26 +411,31 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code recorder.FetchShoeRecordResponse}
+   * <pre>
+   * ListShoesRecordResponse
+   * 取得靴記錄列表
+   * </pre>
+   *
+   * Protobuf type {@code recorder.ListShoesRecordResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:recorder.FetchShoeRecordResponse)
-      com.wecasino.proto.recorder.FetchShoeRecordResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:recorder.ListShoesRecordResponse)
+      com.wecasino.proto.recorder.ListShoesRecordResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchShoeRecordResponse_descriptor;
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListShoesRecordResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchShoeRecordResponse_fieldAccessorTable
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListShoesRecordResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.wecasino.proto.recorder.FetchShoeRecordResponse.class, com.wecasino.proto.recorder.FetchShoeRecordResponse.Builder.class);
+              com.wecasino.proto.recorder.ListShoesRecordResponse.class, com.wecasino.proto.recorder.ListShoesRecordResponse.Builder.class);
     }
 
-    // Construct using com.wecasino.proto.recorder.FetchShoeRecordResponse.newBuilder()
+    // Construct using com.wecasino.proto.recorder.ListShoesRecordResponse.newBuilder()
     private Builder() {
 
     }
@@ -283,23 +456,26 @@ private static final long serialVersionUID = 0L;
         shoeRecordBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      total_ = 0L;
+      searchAfter_ = "";
+      searchBefore_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_FetchShoeRecordResponse_descriptor;
+      return com.wecasino.proto.recorder.ProviderProto.internal_static_recorder_ListShoesRecordResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.FetchShoeRecordResponse getDefaultInstanceForType() {
-      return com.wecasino.proto.recorder.FetchShoeRecordResponse.getDefaultInstance();
+    public com.wecasino.proto.recorder.ListShoesRecordResponse getDefaultInstanceForType() {
+      return com.wecasino.proto.recorder.ListShoesRecordResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.FetchShoeRecordResponse build() {
-      com.wecasino.proto.recorder.FetchShoeRecordResponse result = buildPartial();
+    public com.wecasino.proto.recorder.ListShoesRecordResponse build() {
+      com.wecasino.proto.recorder.ListShoesRecordResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -307,15 +483,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.wecasino.proto.recorder.FetchShoeRecordResponse buildPartial() {
-      com.wecasino.proto.recorder.FetchShoeRecordResponse result = new com.wecasino.proto.recorder.FetchShoeRecordResponse(this);
+    public com.wecasino.proto.recorder.ListShoesRecordResponse buildPartial() {
+      com.wecasino.proto.recorder.ListShoesRecordResponse result = new com.wecasino.proto.recorder.ListShoesRecordResponse(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.wecasino.proto.recorder.FetchShoeRecordResponse result) {
+    private void buildPartialRepeatedFields(com.wecasino.proto.recorder.ListShoesRecordResponse result) {
       if (shoeRecordBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           shoeRecord_ = java.util.Collections.unmodifiableList(shoeRecord_);
@@ -327,22 +503,31 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.wecasino.proto.recorder.FetchShoeRecordResponse result) {
+    private void buildPartial0(com.wecasino.proto.recorder.ListShoesRecordResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.total_ = total_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.searchAfter_ = searchAfter_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.searchBefore_ = searchBefore_;
+      }
     }
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.wecasino.proto.recorder.FetchShoeRecordResponse) {
-        return mergeFrom((com.wecasino.proto.recorder.FetchShoeRecordResponse)other);
+      if (other instanceof com.wecasino.proto.recorder.ListShoesRecordResponse) {
+        return mergeFrom((com.wecasino.proto.recorder.ListShoesRecordResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.wecasino.proto.recorder.FetchShoeRecordResponse other) {
-      if (other == com.wecasino.proto.recorder.FetchShoeRecordResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.wecasino.proto.recorder.ListShoesRecordResponse other) {
+      if (other == com.wecasino.proto.recorder.ListShoesRecordResponse.getDefaultInstance()) return this;
       if (shoeRecordBuilder_ == null) {
         if (!other.shoeRecord_.isEmpty()) {
           if (shoeRecord_.isEmpty()) {
@@ -368,6 +553,19 @@ private static final long serialVersionUID = 0L;
             shoeRecordBuilder_.addAllMessages(other.shoeRecord_);
           }
         }
+      }
+      if (other.getTotal() != 0L) {
+        setTotal(other.getTotal());
+      }
+      if (!other.getSearchAfter().isEmpty()) {
+        searchAfter_ = other.searchAfter_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getSearchBefore().isEmpty()) {
+        searchBefore_ = other.searchBefore_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -408,6 +606,21 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 10
+            case 16: {
+              total_ = input.readInt64();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
+            case 66: {
+              searchAfter_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 66
+            case 74: {
+              searchBefore_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -438,6 +651,10 @@ private static final long serialVersionUID = 0L;
         com.wecasino.proto.recorder.ShoeRecord, com.wecasino.proto.recorder.ShoeRecord.Builder, com.wecasino.proto.recorder.ShoeRecordOrBuilder> shoeRecordBuilder_;
 
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public java.util.List<com.wecasino.proto.recorder.ShoeRecord> getShoeRecordList() {
@@ -448,6 +665,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public int getShoeRecordCount() {
@@ -458,6 +679,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public com.wecasino.proto.recorder.ShoeRecord getShoeRecord(int index) {
@@ -468,6 +693,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder setShoeRecord(
@@ -485,6 +714,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder setShoeRecord(
@@ -499,6 +732,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder addShoeRecord(com.wecasino.proto.recorder.ShoeRecord value) {
@@ -515,6 +752,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder addShoeRecord(
@@ -532,6 +773,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder addShoeRecord(
@@ -546,6 +791,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder addShoeRecord(
@@ -560,6 +809,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder addAllShoeRecord(
@@ -575,6 +828,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder clearShoeRecord() {
@@ -588,6 +845,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public Builder removeShoeRecord(int index) {
@@ -601,6 +862,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public com.wecasino.proto.recorder.ShoeRecord.Builder getShoeRecordBuilder(
@@ -608,6 +873,10 @@ private static final long serialVersionUID = 0L;
       return getShoeRecordFieldBuilder().getBuilder(index);
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public com.wecasino.proto.recorder.ShoeRecordOrBuilder getShoeRecordOrBuilder(
@@ -618,6 +887,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public java.util.List<? extends com.wecasino.proto.recorder.ShoeRecordOrBuilder> 
@@ -629,6 +902,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public com.wecasino.proto.recorder.ShoeRecord.Builder addShoeRecordBuilder() {
@@ -636,6 +913,10 @@ private static final long serialVersionUID = 0L;
           com.wecasino.proto.recorder.ShoeRecord.getDefaultInstance());
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public com.wecasino.proto.recorder.ShoeRecord.Builder addShoeRecordBuilder(
@@ -644,6 +925,10 @@ private static final long serialVersionUID = 0L;
           index, com.wecasino.proto.recorder.ShoeRecord.getDefaultInstance());
     }
     /**
+     * <pre>
+     * shoes
+     * </pre>
+     *
      * <code>repeated .recorder.ShoeRecord shoe_record = 1 [json_name = "shoeRecord"];</code>
      */
     public java.util.List<com.wecasino.proto.recorder.ShoeRecord.Builder> 
@@ -665,23 +950,251 @@ private static final long serialVersionUID = 0L;
       return shoeRecordBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:recorder.FetchShoeRecordResponse)
+    private long total_ ;
+    /**
+     * <pre>
+     * 總數
+     * </pre>
+     *
+     * <code>int64 total = 2 [json_name = "total"];</code>
+     * @return The total.
+     */
+    @java.lang.Override
+    public long getTotal() {
+      return total_;
+    }
+    /**
+     * <pre>
+     * 總數
+     * </pre>
+     *
+     * <code>int64 total = 2 [json_name = "total"];</code>
+     * @param value The total to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotal(long value) {
+
+      total_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 總數
+     * </pre>
+     *
+     * <code>int64 total = 2 [json_name = "total"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTotal() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      total_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object searchAfter_ = "";
+    /**
+     * <pre>
+     * pagination next page
+     * </pre>
+     *
+     * <code>string search_after = 8 [json_name = "searchAfter"];</code>
+     * @return The searchAfter.
+     */
+    public java.lang.String getSearchAfter() {
+      java.lang.Object ref = searchAfter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        searchAfter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * pagination next page
+     * </pre>
+     *
+     * <code>string search_after = 8 [json_name = "searchAfter"];</code>
+     * @return The bytes for searchAfter.
+     */
+    public com.google.protobuf.ByteString
+        getSearchAfterBytes() {
+      java.lang.Object ref = searchAfter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        searchAfter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * pagination next page
+     * </pre>
+     *
+     * <code>string search_after = 8 [json_name = "searchAfter"];</code>
+     * @param value The searchAfter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchAfter(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      searchAfter_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * pagination next page
+     * </pre>
+     *
+     * <code>string search_after = 8 [json_name = "searchAfter"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearchAfter() {
+      searchAfter_ = getDefaultInstance().getSearchAfter();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * pagination next page
+     * </pre>
+     *
+     * <code>string search_after = 8 [json_name = "searchAfter"];</code>
+     * @param value The bytes for searchAfter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchAfterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      searchAfter_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object searchBefore_ = "";
+    /**
+     * <pre>
+     * pagination previous page
+     * </pre>
+     *
+     * <code>string search_before = 9 [json_name = "searchBefore"];</code>
+     * @return The searchBefore.
+     */
+    public java.lang.String getSearchBefore() {
+      java.lang.Object ref = searchBefore_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        searchBefore_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * pagination previous page
+     * </pre>
+     *
+     * <code>string search_before = 9 [json_name = "searchBefore"];</code>
+     * @return The bytes for searchBefore.
+     */
+    public com.google.protobuf.ByteString
+        getSearchBeforeBytes() {
+      java.lang.Object ref = searchBefore_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        searchBefore_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * pagination previous page
+     * </pre>
+     *
+     * <code>string search_before = 9 [json_name = "searchBefore"];</code>
+     * @param value The searchBefore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchBefore(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      searchBefore_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * pagination previous page
+     * </pre>
+     *
+     * <code>string search_before = 9 [json_name = "searchBefore"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSearchBefore() {
+      searchBefore_ = getDefaultInstance().getSearchBefore();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * pagination previous page
+     * </pre>
+     *
+     * <code>string search_before = 9 [json_name = "searchBefore"];</code>
+     * @param value The bytes for searchBefore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSearchBeforeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      searchBefore_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    // @@protoc_insertion_point(builder_scope:recorder.ListShoesRecordResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:recorder.FetchShoeRecordResponse)
-  private static final com.wecasino.proto.recorder.FetchShoeRecordResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:recorder.ListShoesRecordResponse)
+  private static final com.wecasino.proto.recorder.ListShoesRecordResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.wecasino.proto.recorder.FetchShoeRecordResponse();
+    DEFAULT_INSTANCE = new com.wecasino.proto.recorder.ListShoesRecordResponse();
   }
 
-  public static com.wecasino.proto.recorder.FetchShoeRecordResponse getDefaultInstance() {
+  public static com.wecasino.proto.recorder.ListShoesRecordResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FetchShoeRecordResponse>
-      PARSER = new com.google.protobuf.AbstractParser<FetchShoeRecordResponse>() {
+  private static final com.google.protobuf.Parser<ListShoesRecordResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ListShoesRecordResponse>() {
     @java.lang.Override
-    public FetchShoeRecordResponse parsePartialFrom(
+    public ListShoesRecordResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -700,17 +1213,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<FetchShoeRecordResponse> parser() {
+  public static com.google.protobuf.Parser<ListShoesRecordResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FetchShoeRecordResponse> getParserForType() {
+  public com.google.protobuf.Parser<ListShoesRecordResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.wecasino.proto.recorder.FetchShoeRecordResponse getDefaultInstanceForType() {
+  public com.wecasino.proto.recorder.ListShoesRecordResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

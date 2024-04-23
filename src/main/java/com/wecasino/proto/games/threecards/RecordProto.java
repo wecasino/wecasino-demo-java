@@ -45,17 +45,14 @@ public final class RecordProto {
       "NO_MORE_BET\020\r\022\020\n\014SHOW_LEFT_12\020\020\022\021\n\rSHOW_" +
       "RIGHT_12\020\021\022\017\n\013SHOW_LEFT_3\020\022\022\020\n\014SHOW_RIGH" +
       "T_3\020\023\022\022\n\016DEALER_CONFIRM\020\024\022\031\n\025PITBOSS_MOD" +
-      "IFY_NORMAL\020\030*c\n\020ResultRecordType\022\"\n\036RESU" +
-      "LT_RECORD_TYPE_UNSPECIFIED\020\000\022\020\n\014ROUND_FI" +
-      "NISH\020\001\022\031\n\025PITBOSS_MODIFY_RESULT\020\002*h\n\tCar" +
-      "dStyle\022\010\n\004NONE\020\000\022\010\n\004PAIR\020\001\022\014\n\010STRAIGHT\020\002" +
-      "\022\t\n\005FLUSH\020\003\022\r\n\tSTRAIGHTF\020\004\022\013\n\007LEOPARD\020\005\022" +
-      "\022\n\016LEOPARD_KILLER\020\006B\315\001\n#com.wecasino.pro" +
-      "to.games.threecardsB\013RecordProtoP\001Z8gith" +
-      "ub.com/wecasino/wecasino-proto/pbgo/game" +
-      "s/threecards\242\002\003GTX\252\002\020Games.Threecards\312\002\020" +
-      "Games\\Threecards\342\002\034Games\\Threecards\\GPBM" +
-      "etadata\352\002\021Games::Threecardsb\006proto3"
+      "IFY_NORMAL\020\030*\215\001\n\013CardPattern\022\034\n\030CARD_PAT" +
+      "TERN_UNSPECIFIED\020\000\022\010\n\004HIGH\020\001\022\010\n\004PAIR\020\002\022\014" +
+      "\n\010STRAIGHT\020\003\022\t\n\005FLUSH\020\004\022\022\n\016STRAIGHT_FLUS" +
+      "H\020\005\022\013\n\007LEOPARD\020\006\022\022\n\016LEOPARD_KILLER\020\007B\223\001\n" +
+      "#com.wecasino.proto.games.threecardsB\013Re" +
+      "cordProtoP\001\242\002\003GTX\252\002\020Games.Threecards\312\002\020G" +
+      "ames\\Threecards\342\002\034Games\\Threecards\\GPBMe" +
+      "tadata\352\002\021Games::Threecardsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

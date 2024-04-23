@@ -4,8 +4,8 @@
 // Protobuf Java Version: 4.26.1
 package com.wecasino.proto.recorder;
 
-public interface GetDealerResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:recorder.GetDealerResponse)
+public interface ListDealersResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:recorder.ListDealersResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

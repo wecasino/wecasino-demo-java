@@ -438,6 +438,65 @@ java.lang.String defaultValue);
 
   /**
    * <pre>
+   * 玩家姓名
+   * key: 玩家code, value: 玩家名稱。
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName", (.tagger.tags) = "bson:&#92;"playersName,omitempty&#92;""];</code>
+   */
+  int getPlayersNameCount();
+  /**
+   * <pre>
+   * 玩家姓名
+   * key: 玩家code, value: 玩家名稱。
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName", (.tagger.tags) = "bson:&#92;"playersName,omitempty&#92;""];</code>
+   */
+  boolean containsPlayersName(
+      java.lang.String key);
+  /**
+   * Use {@link #getPlayersNameMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getPlayersName();
+  /**
+   * <pre>
+   * 玩家姓名
+   * key: 玩家code, value: 玩家名稱。
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName", (.tagger.tags) = "bson:&#92;"playersName,omitempty&#92;""];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getPlayersNameMap();
+  /**
+   * <pre>
+   * 玩家姓名
+   * key: 玩家code, value: 玩家名稱。
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName", (.tagger.tags) = "bson:&#92;"playersName,omitempty&#92;""];</code>
+   */
+  /* nullable */
+java.lang.String getPlayersNameOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * 玩家姓名
+   * key: 玩家code, value: 玩家名稱。
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; players_name = 30 [json_name = "playersName", (.tagger.tags) = "bson:&#92;"playersName,omitempty&#92;""];</code>
+   */
+  java.lang.String getPlayersNameOrThrow(
+      java.lang.String key);
+
+  /**
+   * <pre>
    * 歷程
    * </pre>
    *
@@ -593,6 +652,94 @@ java.lang.String defaultValue);
    */
   com.google.protobuf.ByteString
       getCancelMessageBytes();
+
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  int getWinTypeCount();
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  boolean containsWinType(
+      int key);
+  /**
+   * Use {@link #getWinTypeMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.Integer, com.wecasino.proto.games.WinType>
+  getWinType();
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  java.util.Map<java.lang.Integer, com.wecasino.proto.games.WinType>
+  getWinTypeMap();
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  /* nullable */
+com.wecasino.proto.games.WinType getWinTypeOrDefault(
+      int key,
+      /* nullable */
+com.wecasino.proto.games.WinType         defaultValue);
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  com.wecasino.proto.games.WinType getWinTypeOrThrow(
+      int key);
+  /**
+   * Use {@link #getWinTypeValueMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.Integer, java.lang.Integer>
+  getWinTypeValue();
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  java.util.Map<java.lang.Integer, java.lang.Integer>
+  getWinTypeValueMap();
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  int getWinTypeValueOrDefault(
+      int key,
+      int defaultValue);
+  /**
+   * <pre>
+   * 贏方
+   * </pre>
+   *
+   * <code>map&lt;int32, .games.WinType&gt; win_type = 27 [json_name = "winType", (.tagger.tags) = "bson:&#92;"winType,omitempty&#92;""];</code>
+   */
+  int getWinTypeValueOrThrow(
+      int key);
 
   /**
    * <pre>

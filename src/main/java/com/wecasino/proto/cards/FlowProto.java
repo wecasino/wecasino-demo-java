@@ -35,11 +35,10 @@ public final class FlowProto {
     java.lang.String[] descriptorData = {
       "\n\020cards/flow.proto\022\005cards*K\n\010FlowCard\022\031\n" +
       "\025FLOW_CARD_UNSPECIFIED\020\000\022\021\n\rFLOW_NEW_SHO" +
-      "E\020\001\022\021\n\rFLOW_SHOE_CUT\020\002B\210\001\n\030com.wecasino." +
-      "proto.cardsB\tFlowProtoP\001Z-github.com/wec" +
-      "asino/wecasino-proto/pbgo/cards\242\002\003CXX\252\002\005" +
-      "Cards\312\002\005Cards\342\002\021Cards\\GPBMetadata\352\002\005Card" +
-      "sb\006proto3"
+      "E\020\001\022\021\n\rFLOW_SHOE_CUT\020\002BY\n\030com.wecasino.p" +
+      "roto.cardsB\tFlowProtoP\001\242\002\003CXX\252\002\005Cards\312\002\005" +
+      "Cards\342\002\021Cards\\GPBMetadata\352\002\005Cardsb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

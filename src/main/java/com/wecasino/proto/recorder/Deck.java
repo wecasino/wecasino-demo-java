@@ -5,6 +5,11 @@
 package com.wecasino.proto.recorder;
 
 /**
+ * <pre>
+ * Deck
+ * 一副牌
+ * </pre>
+ *
  * Protobuf type {@code recorder.Deck}
  */
 public final class Deck extends
@@ -341,6 +346,11 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Deck
+   * 一副牌
+   * </pre>
+   *
    * Protobuf type {@code recorder.Deck}
    */
   public static final class Builder extends
