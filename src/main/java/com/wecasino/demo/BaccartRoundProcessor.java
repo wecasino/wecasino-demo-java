@@ -96,8 +96,8 @@ public class BaccartRoundProcessor implements RoundProcessor {
         Step step = roundParser.GetCurrentStep(round);
         //局結算時間 step.getTimestamp()
 
-        String[] roundBankerCard = parseBankerRoundCards(round);  //遊戲結果, format DICE_1-DICE_2-DICE_3
-        String[] roundPlayerCard = parsePlayerRoundCards(round);  //遊戲結果, format DICE_1-DICE_2-DICE_3
+        String[] roundBankerCard = parseBankerRoundCards(round);  //遊戲結果,  format ["CLUB_1","CLUB_2","CLUB_3"]
+        String[] roundPlayerCard = parsePlayerRoundCards(round);  //遊戲結果, format ["CLUB_1","CLUB_1","CLUB_1"]
         Map<String, Long> fortuneRatesMap = round.getFortuneRatesMap(); //財神倍率
         fortuneRatesMap.forEach((k, v) ->  {
             //k 3骰總和 3-18, v 倍率
