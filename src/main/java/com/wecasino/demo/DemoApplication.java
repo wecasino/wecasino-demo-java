@@ -5,6 +5,8 @@ import com.rabbitmq.client.Channel;
 import com.wecasino.proto.games.GameType;
 import com.wecasino.proto.recorder.GameNotifyType;
 import com.wecasino.proto.recorder.RoundRecord;
+import com.wecasino.proto.recorder.GameProvide;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
@@ -26,6 +28,7 @@ public class DemoApplication  {
 	private static final String WECA_EXCHANGE = "game-exchange";
 	private static final Duration WECA_CATCHUP_PERIOD = Duration.ofMinutes(3);
 
+	private final BaccartRoundProcessor baccartRoundProcessor = new BaccartRoundProcessor();
     private final SicboRoundProcessor sicboRoundProcessor = new SicboRoundProcessor();
     private final RouletteRoundProcessor rouletteRoundProcessor = new RouletteRoundProcessor();
 
@@ -54,6 +57,9 @@ public class DemoApplication  {
 			var now = new Date();
 			var msgType = msg.getMessageProperties().getType();
 			var msgTs = msg.getMessageProperties().getTimestamp();
+//			logger.info("Received msg hdr: " + now);
+//			logger.info("Received msgTs hdr: " + msgTs);
+
 			var msgNeedCatchup = Duration.between(msgTs.toInstant(), now.toInstant()).compareTo(WECA_CATCHUP_PERIOD) > 0;
 
 			var msgHdr = Map.of(
@@ -73,9 +79,12 @@ public class DemoApplication  {
 			logger.info("Received message type: " + msgType);
 
 			if (msgType.equals(GameNotifyType.NOTIFY_GAME_PROVIDE_STATE_CHANGE.name())) {
-				//遊戲開啟或維護
+				// 遊戲開啟或維護
+				// GameProvide protoProviderMsg = GameProvide.newBuilder().mergeFrom(msg.getBody()).build();
 			} else if (msgType.equals(GameNotifyType.NOTIFY_GAME_DEALER_LOGIN.name())) {
+				processProvider(msg.getBody(),GameNotifyType.NOTIFY_GAME_DEALER_LOGIN);
 				// 荷官登入
+				// GameProvide protoProviderMsg = GameProvide.newBuilder().mergeFrom(msg.getBody()).build();
 			} else if (msgType.equals(GameNotifyType.NOTIFY_GAME_DEALER_LOGOUT.name())) {
 				// 荷官登出
 			} else if (msgType.equals(GameNotifyType.NOTIFY_GAME_CHANGING_SHOE.name())) {
@@ -118,6 +127,10 @@ public class DemoApplication  {
 		}
 	}
 
+	protected void processProvider(byte[] data, GameNotifyType notifyType) throws InvalidProtocolBufferException {
+		GameProvide round = GameProvide.newBuilder().mergeFrom(data).build();
+	}
+
 	protected void processShoe(byte[] data, GameNotifyType notifyType) throws InvalidProtocolBufferException {
 
 	}
@@ -128,6 +141,7 @@ public class DemoApplication  {
         String gameType = round.getGameType();
         if (gameType.equals(GameType.BACCARAT.name())) {
             // handle BACCARAT
+			baccartRoundProcessor.ProcessRound(round, notifyType);
         } else if (gameType.equals(GameType.LUCKYWHEEL.name())) {
             //handle LUCKYWHEEL
         } else if (gameType.equals(GameType.SICBO.name())) {
